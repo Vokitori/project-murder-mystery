@@ -1,3 +1,19 @@
+
+# Created by https://www.gitignore.io/api/net,netbeans,java
+
+#!! ERROR: net is undefined. Use list command to see defined gitignore types !!#
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/
+
+
+### Java ###
 *.class
 
 # Mobile Tools for Java (J2ME)
