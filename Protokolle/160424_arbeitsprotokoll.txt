@@ -1,0 +1,15 @@
+Bilder einzeln zusammensetzen (Hintergrund, 4 Figurenslots, Dialogfenster, Buttons)
+Hauptfigur links je nach position gespiegelt, figur steht links schaut nach rechts und umgekehrt
+links oben in fenster oprions button, 
+rechts oben text anzeigen button,
+
+Auswahlmöglichkeiten, nebeneinander oder scollbar?
+
+text mit leertaste durchblättern und schneller darstellen = default
+
+mit enter durchblättern aber kein text beschleunigen und entscheidungen treffen = default
+
+in optionen keybinding
+
+text anzeigen button öffnet fenster mit kompletten text zwischen zwei entscheidungen
+
