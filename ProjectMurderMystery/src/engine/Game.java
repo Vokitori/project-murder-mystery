@@ -1,10 +1,19 @@
 package engine;
 
+import engine.menu.NewPath;
+import engine.menu.Intro;
+import engine.menu.Options;
+import engine.menu.InGame;
+import engine.menu.MainMenu;
+import engine.menu.Credits;
+import engine.menu.RouteTree;
+import engine.menu.Keybindings;
 import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -12,34 +21,37 @@ import javax.swing.JPanel;
  */
 public class Game {
 
-    private final JFrame window = new JFrame("Titel");
-    private final Intro intro = new Intro();
-    private final Credits credits = new Credits();
-    private final Options options = new Options();
-    private final Keybindings keybindings = new Keybindings();
-    private final RoutTree routTree = new RoutTree();
-    private final ChoosePath choosePath = new ChoosePath();
-    private final InGame inGame = new InGame();
+    public final JFrame window = new JFrame("Titel");
+    public final Intro intro = new Intro(this);
+    public final Credits credits = new Credits(this);
+    public final Options options = new Options(this);
+    public final Keybindings keybindings = new Keybindings(this);
+    public final RouteTree routeTree = new RouteTree(this);
+    public final NewPath newPath = new NewPath(this);
+    public final InGame inGame = new InGame(this);
+    public final MainMenu mainMenu = new MainMenu(this);
 
     public void load() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setPreferredSize(new Dimension(800, 600));
         window.pack();
         window.setLocationRelativeTo(null);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     public void start() {
 
         window.setVisible(true);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         setMenu(intro);
     }
 
-    public void setMenu(JPanel menu) {
+    public void setMenu(MenuPanel menu) {
+        menu.resume();
         window.setContentPane(menu);
         menu.revalidate();
     }

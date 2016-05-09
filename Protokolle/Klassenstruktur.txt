@@ -1,1 +1,4 @@
-Klassenstruktur:
+
+JFrame: Das Fenster
+IntroPanel extends JPanel: beinhaltet das Intro 
+MainMenuPanel extends JPanel:    

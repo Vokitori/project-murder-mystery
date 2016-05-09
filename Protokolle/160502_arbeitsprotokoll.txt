@@ -1,8 +1,10 @@
 Arbeitsprotokoll 2.5.2016
 Start: 15:20 
-pause: 17:20-
+pause: 17:20-18:20
+ende: 19:45
 
-Thema: Git einrichten, Ordnerstruktur,
+
+Thema: Git einrichten, Ordnerstruktur, Klassenstruktur
 
 Git einrichten: Owner Vokitori (Viktoria), gitignore geschrieben, repository name: project-murder-mystery
 
@@ -16,5 +18,3 @@ stories/<storyname>/last
 stories/<storyname>/tree.sav
 
 Klassenstruktur:
-siehe Dokument Klassenstruktur.
-
