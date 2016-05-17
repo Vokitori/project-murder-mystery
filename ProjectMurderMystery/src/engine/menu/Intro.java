@@ -23,7 +23,7 @@ public class Intro extends MenuPanel {
         Thread t = new Thread(() -> {
             try {
                 Thread.sleep(222);
-                game.setMenu(game.inGame);
+                game.setMenu(game.mainMenu);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
             }
