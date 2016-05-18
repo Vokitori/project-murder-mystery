@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package engine.menu;
 
 import engine.Game;
 import engine.MenuPanel;
-import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import javax.swing.JButton;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
