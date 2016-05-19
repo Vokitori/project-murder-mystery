@@ -1,0 +1,9 @@
+Arbeitsprotokoll 19.5.2016
+Start: 11:20
+ende: 13:00
+1,5 stunden
+
+Thema: FileParser beendet
+planung: 1,8 stunden
+implementierung: 5,5
+FileParser gesamt: 7,3 stunden

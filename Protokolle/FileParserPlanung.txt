@@ -1,0 +1,40 @@
+klasse: 
+SmallNode:
+alle public final alle wedren n DataPackage
+constructor von SmallNode hat alles als parameter übergeben
+BufferedImage;
+BufferedImage;
+BufferedImage;
+BufferedImage;
+BufferedImage;
+GameEvent;//dummy string
+Music;//dummy string
+String text;
+LinkedList<Decision>;
+
+
+
+FileParser: 
+public static LinkedList<GameNode> parse(File file);
+
+
+Decision:
+File;
+String;
+
+DataPackage<T>://template für ein objekt und was damit gemacht werden soll
+ctor(t, DataAction)
+T t 
+DataAction
+
+(enum)DataAction: //beinhaltet was mit dem Objekt gemacht werden soll
+DELETE, KEEP, LOAD
+
+Main:
+
+
+.trim= leerzeichen und enter entfernen tab etc
+.split 
+.to lower case
+.equals
+.contains

@@ -1,0 +1,6 @@
+﻿Arbeitsprotokoll 18.5.2016
+Start: 15:30
+pause: 16:00-17:30
+ende: 21:00
+
+Thema: FileParser beenden: funktionsfähig: liest dokumente und spaltet sie in SmallNodes auf und gibt eine Liste zurück
