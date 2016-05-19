@@ -46,7 +46,7 @@ public class Keybindings extends MenuPanel {
                         default:
                             System.out.println(e.getKeyChar());
                 }
-                batton.revalidate();
+                batton.revaildate();
             }
 
             @Override
