@@ -1,0 +1,35 @@
+start:14:10
+ende:15:40
+
+BESPROCHEN:
+besprechung speicherstände, preziesere formulierung wie die speicherung funktioniert
+2.2 eingefügt: beschreibung des textes und namensgebung
+anpassung der punkte
+einfügen von "basiert auf"
+Besprechung über die rechtliche Lage wenn wir das spiel verkaufen.
+
+STRUKTURIERUNG DOKUMENT:
+Programm: was kann das Programm?
+Content: was kann die rute ?
+
+
+TODO:
+Da sich nummerierung verändert hat, dokumente durchgehen falls sich darin etwas auf die punkt bezieht.
+Rechtliches in dokument muss noch geschrieben werden.
+Wegen fotos der FH erlaubnis einholen.
+Alle Komponenten mit NAmen ausstatten
+Dokument userfreundlicher machen: übersichtliche begriffe keine technischen detail (z.B.:wie gespeichert wird)
+Dokument "Verantwortung" anlegen
+Dokument "Strukturplan" anlegen: Arbeitspakages als diagramm
+Workpackages namen entfernen
+Tasks in den einzelnen Workpackages definieren: in kleinere packages aufteilen
+Task in COntent: Charakterbeschreibeung, Hintergrundbeschreibung, Charakter erstellung, Hintergrund erstellen,
+Task für zeichen: Charakterplanung, Charakter zeichnen
+Projektablaufplan in spreadsheet: diesen mit tasks belegen 
+Definieren in der Spielbeschreibung (Gamedesign dokument) was eine Route, ein AKT etc ist. alle Namen definieren!!!!GLOSAR und
+Fliestext der "DEfinition, satz, beweis liefert" und alles danach baut darauf auf. 
+Mario Pani wegen ITP Website ansprechen
+
+NAECHSTES MEETING:
+31.05.2016 15:30
+vorzeigen: Prototyp: spielbar design muss nicht schön sein.
