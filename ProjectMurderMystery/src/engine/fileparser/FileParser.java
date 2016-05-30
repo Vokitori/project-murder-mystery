@@ -1,5 +1,6 @@
-package fileparser;
+package engine.fileparser;
 
+import engine.Ref;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +9,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
-import javax.print.DocFlavor;
 
 /**
  * @author Voki
@@ -138,7 +138,7 @@ public class FileParser {
 
     private static void parseDecision(StringBuilder textBox, Ref<LinkedList<Decision>> decisionList, Ref<String> text) {
         ArrayList<String> substringList = new ArrayList<>();
-        for (int i = 0; textBox.indexOf("{") != -1; i++) {
+        while(textBox.indexOf("{") != -1) {
             int start = textBox.indexOf("{");
             int end = textBox.indexOf("}", start);
             substringList.add(textBox.substring(start + 1, end));

@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException{
         LinkedList<SmallNode> s = FileParser.parseBigNode(new File ("../Test_Files/Baum.txt")); 
                 
-                System.out.println(s.get(0).music.data.music);
+                System.out.println(s.get(1).decisionList.get(1).file);
     }
     
 }
