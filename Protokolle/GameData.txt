@@ -2,17 +2,20 @@ in constructor:
 start.txt laden
 
 methoden:
-loadNext():
-gibt nächsten smallNode
+public void nextNode(int decision)
+  public void nextNode()
+  private <T> T getNext(T oldData, DataPackage<T> newData)
+  getter für jede var 
 
-getter:
-DataPackage<BufferedImage> getSlot1();
-DataPackage<BufferedImage> getSlot2();
-DataPackage<BufferedImage> getSlot3();
-DataPackage<BufferedImage> getSlot4();
-DataPackage<BufferedImage> getBackground();
-DataPackage<GameEvent> getGameEvent();
-DataPackage<Music> getMusic();
-String getText();
-LinkedList<Decision> getDecisionList();
+var:
+  private LinkedList<SmallNode> nodes;
 
+    private BufferedImage slot1;
+    private BufferedImage slot2;
+    private BufferedImage slot3;
+    private BufferedImage slot4;
+    private BufferedImage background;
+    private GameEvent gameEvent;
+    private Music music;
+    private String text;
+    private LinkedList<Decision> decisionList;
