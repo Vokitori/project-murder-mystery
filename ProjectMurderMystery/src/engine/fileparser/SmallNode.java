@@ -34,8 +34,11 @@ public class SmallNode {
         this.decisionList = decisionList;
     }
 
-   
-
-    
+    @Override
+    public String toString() {
+        return "SmallNode{" + "slot1=" + slot1 + ", slot2=" + slot2 + ", slot3=" + slot3 + ", slot4=" + slot4 +
+                ", background=" + background + ", gameEvent=" + gameEvent + ", music=" + music + 
+                ", text=" + text + ", decisionList=" + decisionList + '}';
+    }
 
 }

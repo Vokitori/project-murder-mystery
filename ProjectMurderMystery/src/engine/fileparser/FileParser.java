@@ -31,11 +31,13 @@ public class FileParser {
     }
 
     private static SmallNode parseSmallNode(StringBuilder screenBlock) throws IOException {
-        Ref<DataPackage<BufferedImage>> slot1 = new Ref<>(),
-                slot2 = new Ref<>(), slot3 = new Ref<>(),
-                slot4 = new Ref<>(), background = new Ref<>();
-        Ref<DataPackage<GameEvent>> gameEvent = new Ref<>();
-        Ref<DataPackage<Music>> music = new Ref<>();
+        Ref<DataPackage<BufferedImage>> slot1 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
+                slot2 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
+                slot3 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
+                slot4 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
+                background = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP));
+        Ref<DataPackage<GameEvent>> gameEvent = new Ref<>(new DataPackage<GameEvent>(null, DataAction.KEEP));
+        Ref<DataPackage<Music>> music = new Ref<>(new DataPackage<Music>(null, DataAction.KEEP));
         Ref<String> text = new Ref<>();
         Ref<LinkedList<Decision>> decisionList = new Ref<>();
 
@@ -138,7 +140,7 @@ public class FileParser {
 
     private static void parseDecision(StringBuilder textBox, Ref<LinkedList<Decision>> decisionList, Ref<String> text) {
         ArrayList<String> substringList = new ArrayList<>();
-        while(textBox.indexOf("{") != -1) {
+        while (textBox.indexOf("{") != -1) {
             int start = textBox.indexOf("{");
             int end = textBox.indexOf("}", start);
             substringList.add(textBox.substring(start + 1, end));
@@ -148,8 +150,8 @@ public class FileParser {
         text.object = textBox.toString().trim();
         substringToDecision(decisionList, substringList);
     }
-    
-    private static void substringToDecision(Ref<LinkedList<Decision>> decisionList, ArrayList<String> substringList){
+
+    private static void substringToDecision(Ref<LinkedList<Decision>> decisionList, ArrayList<String> substringList) {
         decisionList.object = new LinkedList<>();
         for (int i = 0; i < substringList.size(); i++) {
             String[] arr = substringList.get(i).split("\\|");

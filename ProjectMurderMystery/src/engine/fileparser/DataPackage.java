@@ -11,5 +11,10 @@ public class DataPackage <Data> {
         this.data = data;
         this.dataAction = dataAction;
     }
+
+    @Override
+    public String toString() {
+        return "DataPackage{" + "data=" + data + ", dataAction=" + dataAction + '}';
+    }
     
 }

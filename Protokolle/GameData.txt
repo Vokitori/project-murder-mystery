@@ -1,0 +1,18 @@
+in constructor:
+start.txt laden
+
+methoden:
+loadNext():
+gibt nächsten smallNode
+
+getter:
+DataPackage<BufferedImage> getSlot1();
+DataPackage<BufferedImage> getSlot2();
+DataPackage<BufferedImage> getSlot3();
+DataPackage<BufferedImage> getSlot4();
+DataPackage<BufferedImage> getBackground();
+DataPackage<GameEvent> getGameEvent();
+DataPackage<Music> getMusic();
+String getText();
+LinkedList<Decision> getDecisionList();
+

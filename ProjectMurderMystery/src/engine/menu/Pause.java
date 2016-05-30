@@ -75,7 +75,7 @@ public class Pause extends Screen {
                     .addComponent(back)
                     .addComponent(load)
                     .addComponent(exit))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +88,7 @@ public class Pause extends Screen {
                 .addComponent(load)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exit)
-                .addContainerGap())
+                .addGap(101, 101, 101))
         );
 
         add(container);

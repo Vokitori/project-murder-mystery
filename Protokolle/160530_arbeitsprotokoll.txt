@@ -1,0 +1,12 @@
+Arbeitsprotokoll 30.5.2016
+Start: 10:10
+pause: 
+ende:
+
+Taetigkeiten:
+FileParser in Engine integriert
+
+Probleme: 
+Pausemenu in inGameScreen wird doppelt angezeigt
+
+GameDisplaybeschreibung: siehe GameDisplay.txt
