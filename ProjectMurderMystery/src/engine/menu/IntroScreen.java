@@ -1,7 +1,7 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,9 +10,9 @@ import java.util.logging.Logger;
  *
  * @author Voki
  */
-public class Intro extends MenuPanel {
+public class IntroScreen extends Screen {
 
-    public Intro(Game game) {
+    public IntroScreen(Game game) {
         super(game);
         setBackground(Color.black);
     }
@@ -23,7 +23,7 @@ public class Intro extends MenuPanel {
         Thread t = new Thread(() -> {
             try {
                 Thread.sleep(222);
-                game.setMenu(game.mainMenu);
+                game.setScreen(game.mainScreen);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
             }

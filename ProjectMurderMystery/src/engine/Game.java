@@ -1,13 +1,13 @@
 package engine;
 
-import engine.menu.NewPath;
-import engine.menu.Intro;
-import engine.menu.Options;
-import engine.menu.InGame;
-import engine.menu.MainMenu;
-import engine.menu.Credits;
-import engine.menu.RouteTree;
-import engine.menu.Keybindings;
+import engine.menu.NewPathScreen;
+import engine.menu.IntroScreen;
+import engine.menu.OptionsScreen;
+import engine.menu.InGameScreen;
+import engine.menu.MainMenuScreen;
+import engine.menu.CreditsScreen;
+import engine.menu.TreeScreen;
+import engine.menu.KeybindingsScreen;
 import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,14 +22,15 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Game {
 
     public final JFrame window = new JFrame("Titel");
-    public final Intro intro = new Intro(this);
-    public final Credits credits = new Credits(this);
-    public final Options options = new Options(this);
-    public final Keybindings keybindings = new Keybindings(this);
-    public final RouteTree routeTree = new RouteTree(this);
-    public final NewPath newPath = new NewPath(this);
-    public final InGame inGame = new InGame(this);
-    public final MainMenu mainMenu = new MainMenu(this);
+    public final IntroScreen introScreen = new IntroScreen(this);
+    public final CreditsScreen creditsScreen = new CreditsScreen(this);
+    public final OptionsScreen optionsScreen = new OptionsScreen(this);
+    public final KeybindingsScreen keybindingsScreen = new KeybindingsScreen(this);
+    public final TreeScreen treeScreen = new TreeScreen(this);
+    public final NewPathScreen newPathScreen = new NewPathScreen(this);
+    public final InGameScreen inGameScreen = new InGameScreen(this);
+    public final MainMenuScreen mainScreen = new MainMenuScreen(this);
+    boolean ingame = false;
 
     public void load() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,19 +41,30 @@ public class Game {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
 
     public void start() {
-
         window.setVisible(true);
-        
-        setMenu(intro);
+        setScreen(introScreen);
     }
 
-    public void setMenu(MenuPanel menu) {
-        menu.resume();
-        window.setContentPane(menu);
-        menu.revalidate();
+    public void setScreen(Screen screen) {
+        screen.resume();
+        if (ingame && screen == mainScreen) {
+            if (window.getContentPane() == inGameScreen) {
+                ingame = false;
+            } else {
+                window.setContentPane(inGameScreen);
+                screen.repaint();
+                screen.revalidate();
+                return;
+            }
+        }
+        if (screen == inGameScreen) {
+            ingame = true;
+        }
+        window.setContentPane(screen);
+        screen.revalidate();
     }
 }

@@ -1,25 +1,25 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.event.ActionEvent;
 
 /**
  *
  * @author Voki
  */
-public class RouteTree extends MenuPanel {
+public class TreeScreen extends Screen {
 
-    public RouteTree(Game game) {
+    public TreeScreen(Game game) {
         super(game);
 
         initComponents();
         back.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.mainMenu);
+            game.setScreen(game.mainScreen);
         });
         
         load.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.inGame);
+            game.setScreen(game.inGameScreen);
         });
     }
 

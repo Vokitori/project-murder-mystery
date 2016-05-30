@@ -1,20 +1,20 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.event.ActionEvent;
 
 /**
  *
  * @author Voki
  */
-public class Keybindings extends MenuPanel {
+public class KeybindingsScreen extends Screen {
 
-    public Keybindings(Game game) {
+    public KeybindingsScreen(Game game) {
         super(game);
         initComponents();
         back.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.options);
+            game.setScreen(game.optionsScreen);
         });
     /*setLayout(null);
         JButton batton = new JButton("ZEBATTHON");
