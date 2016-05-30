@@ -1,7 +1,7 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
@@ -9,24 +9,24 @@ import javax.swing.JButton;
  *
  * @author Voki
  */
-public class MainMenu extends MenuPanel {
+public class MainMenuScreen extends Screen {
 
-    public MainMenu(Game game) {
+    public MainMenuScreen(Game game) {
         super(game);
 
         initComponents();
         
         newPath.addActionListener((ActionEvent e) -> {
-              game.setMenu(game.newPath);
+              game.setScreen(game.newPathScreen);
         });
        load.addActionListener((ActionEvent e) -> {
-              game.setMenu(game.routeTree);
+              game.setScreen(game.treeScreen);
         });
         options.addActionListener((ActionEvent e) -> {
-              game.setMenu(game.options);
+              game.setScreen(game.optionsScreen);
         });
         credits.addActionListener((ActionEvent e) -> {
-              game.setMenu(game.credits);
+              game.setScreen(game.creditsScreen);
         });
         leaveGame.addActionListener((ActionEvent e) -> {
             game.window.dispose();

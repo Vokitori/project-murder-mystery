@@ -6,10 +6,10 @@ import javax.swing.JPanel;
  *
  * @author Voki
  */
-public class MenuPanel extends JPanel{
+public class Screen extends JPanel{
     protected final Game game;
     
-    public MenuPanel(Game game) {
+    public Screen(Game game) {
         this.game = game;
     }
     

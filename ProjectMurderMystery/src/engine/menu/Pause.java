@@ -1,7 +1,7 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -11,44 +11,48 @@ import java.awt.event.ActionEvent;
  *
  * @author Voki
  */
-public class Pause extends MenuPanel {
-    
+public class Pause extends Screen {
+
     public Pause(Game game) {
         super(game);
         initComponents();
         container.setLocation(0, 0);
         container.setPreferredSize(new Dimension(200, 200));
         back.addActionListener((ActionEvent e) -> {
-            game.inGame.continueGame(this);
-            
+            new Thread(() -> game.inGameScreen.continueGame(this)).start();
         });
         exit.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.mainMenu);
+            new Thread(() -> game.inGameScreen.continueGame(this)).start();
+            game.setScreen(game.mainScreen);
         });
         load.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.routeTree);
+            game.setScreen(game.treeScreen);
         });
         options.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.options);
+            game.setScreen(game.optionsScreen);
         });
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        container = new javax.swing.JPanel();
+        bufferLeft = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         options = new javax.swing.JButton();
         load = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        bufferRight = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(0, 255, 204));
         setOpaque(false);
         setLayout(new java.awt.GridLayout(1, 3));
-        add(jPanel1);
+
+        bufferLeft.setBackground(new java.awt.Color(233, 124, 124));
+        bufferLeft.setOpaque(false);
+        bufferLeft.setLayout(null);
+        add(bufferLeft);
 
         container.setBackground(new java.awt.Color(160, 9, 9));
 
@@ -88,16 +92,20 @@ public class Pause extends MenuPanel {
         );
 
         add(container);
-        add(jPanel2);
+
+        bufferRight.setBackground(new java.awt.Color(233, 124, 124));
+        bufferRight.setOpaque(false);
+        bufferRight.setLayout(null);
+        add(bufferRight);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JPanel container;
+    private javax.swing.JPanel bufferLeft;
+    private javax.swing.JPanel bufferRight;
+    public final javax.swing.JPanel container = new javax.swing.JPanel();
     private javax.swing.JButton exit;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton load;
     private javax.swing.JButton options;
     // End of variables declaration//GEN-END:variables

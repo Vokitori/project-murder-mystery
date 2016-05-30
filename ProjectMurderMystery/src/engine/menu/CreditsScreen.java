@@ -1,7 +1,7 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -16,22 +16,22 @@ import javax.imageio.ImageIO;
  *
  * @author Voki
  */
-public class Credits extends MenuPanel {
+public class CreditsScreen extends Screen {
 
     private BufferedImage backgroundImage = null;
-    public Credits(Game game) {
+    public CreditsScreen(Game game) {
         super(game);
         
         initComponents();
         try {
             backgroundImage = ImageIO.read(new File("img/credits.png"));
         } catch (IOException ex) {
-            Logger.getLogger(Credits.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreditsScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
         creditsText.setBackground(new Color(0, 0, 0, 0));
         
         back.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.mainMenu);
+            game.setScreen(game.mainScreen);
         });
     }
 

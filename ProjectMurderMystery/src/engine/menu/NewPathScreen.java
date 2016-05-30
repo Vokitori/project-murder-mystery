@@ -1,21 +1,21 @@
 package engine.menu;
 
 import engine.Game;
-import engine.MenuPanel;
+import engine.Screen;
 import java.awt.event.ActionEvent;
 
 /**
  *
  * @author Voki
  */
-public class NewPath extends MenuPanel {
+public class NewPathScreen extends Screen {
 
-    public NewPath(Game game) {
+    public NewPathScreen(Game game) {
         super(game);
 
         initComponents();
         back.addActionListener((ActionEvent e) -> {
-            game.setMenu(game.mainMenu);
+            game.setScreen(game.mainScreen);
         });
 
     }
