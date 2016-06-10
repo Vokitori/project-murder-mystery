@@ -1,10 +1,10 @@
 package engine;
 
 import engine.fileparser.DataPackage;
-import engine.fileparser.Decision;
+import engine.stuff.Decision;
 import engine.fileparser.FileParser;
-import engine.fileparser.GameEvent;
-import engine.fileparser.Music;
+import engine.stuff.GameEvent;
+import engine.stuff.Music;
 import engine.fileparser.SmallNode;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -22,36 +22,44 @@ public class GameData {
 
     private LinkedList<SmallNode> nodes;
 
-    private BufferedImage slot1;
-    private BufferedImage slot2;
-    private BufferedImage slot3;
-    private BufferedImage slot4;
-    private BufferedImage background;
+    private Ref<BufferedImage> slot1;
+    private Ref<BufferedImage> slot2;
+    private Ref<BufferedImage> slot3;
+    private Ref<BufferedImage> slot4;
+    private Ref<BufferedImage> background;
     private GameEvent gameEvent;
     private Music music;
     private String text;
     private LinkedList<Decision> decisionList;
+    public final String folder;
 
-    public GameData() {
-        Scanner scanner;
-        try {
-            scanner = new Scanner(new File("stories/storyselect"));
+    public GameData() throws FileNotFoundException, IOException {
+        Scanner scanner = new Scanner(new File("stories/storyselect"));
+        folder = "stories/" + scanner.nextLine() + "/";
+        String path = getTextPath() + "start.txt";
+        nodes = FileParser.parseBigNode(new File(path), getImagePath(), getSoundPath());
+        slot1 = new Ref<>();
+        slot2 = new Ref<>();
+        slot3 = new Ref<>();
+        slot4 = new Ref<>();
+        background = new Ref<>();
+    }
 
-            String folderName = scanner.nextLine();
-            try {
-                String path = "stories/" + folderName + "/text/start.txt";
-                nodes = FileParser.parseBigNode(new File(path));
-            } catch (IOException ex) {
-                Logger.getLogger(GameData.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(GameData.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public final String getSoundPath() {
+        return folder + "sound/";
+    }
+
+    public final String getTextPath() {
+        return folder + "text/";
+    }
+
+    public final String getImagePath() {
+        return folder + "image/";
     }
 
     public void nextNode(int decision) {
         try {
-            nodes = FileParser.parseBigNode(decisionList.get(decision).file);
+            nodes = FileParser.parseBigNode(decisionList.get(decision).file, getImagePath(), getSoundPath());
             nextNode();
         } catch (IOException ex) {
             Logger.getLogger(GameData.class.getName()).log(Level.SEVERE, null, ex);
@@ -60,11 +68,11 @@ public class GameData {
 
     public void nextNode() {
         SmallNode node = nodes.pop();
-        slot1 = getNext(slot1, node.slot1);
-        slot2 = getNext(slot2, node.slot2);
-        slot3 = getNext(slot3, node.slot3);
-        slot4 = getNext(slot4, node.slot4);
-        background = getNext(background, node.background);
+        slot1.object = getNext(slot1.object, node.slot1);
+        slot2.object = getNext(slot2.object, node.slot2);
+        slot3.object = getNext(slot3.object, node.slot3);
+        slot4.object = getNext(slot4.object, node.slot4);
+        background.object = getNext(background.object, node.background);
         gameEvent = getNext(gameEvent, node.gameEvent);
         music = getNext(music, node.music);
         text = node.text;
@@ -83,23 +91,23 @@ public class GameData {
         throw new RuntimeException("DIS IS IMPOSSIBLE");
     }
 
-    public BufferedImage getSlot1() {
+    public Ref<BufferedImage> getSlot1() {
         return slot1;
     }
 
-    public BufferedImage getSlot2() {
+    public Ref<BufferedImage> getSlot2() {
         return slot2;
     }
 
-    public BufferedImage getSlot3() {
+    public Ref<BufferedImage> getSlot3() {
         return slot3;
     }
 
-    public BufferedImage getSlot4() {
+    public Ref<BufferedImage> getSlot4() {
         return slot4;
     }
 
-    public BufferedImage getBackground() {
+    public Ref<BufferedImage> getBackground() {
         return background;
     }
 

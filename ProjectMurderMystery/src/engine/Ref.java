@@ -13,4 +13,10 @@ public class Ref<T> {
     public Ref(T object) {
         this.object = object;
     }
+
+    @Override
+    public String toString() {
+        return object.toString();
+    }
+    
 }

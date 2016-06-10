@@ -1,6 +1,7 @@
 //alles zwischen zwei rauten := screenBlock 
 music = eatdatschwalb.mp3;
 event = shake;
+slot1 = dummy.png;
 #
 Du wurdest von einem Zombie gebissen. TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT

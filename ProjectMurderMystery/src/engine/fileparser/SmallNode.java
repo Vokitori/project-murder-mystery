@@ -1,5 +1,8 @@
 package engine.fileparser;
 
+import engine.stuff.GameEvent;
+import engine.stuff.Decision;
+import engine.stuff.Music;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 

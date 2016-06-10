@@ -1,5 +1,8 @@
 package engine.fileparser;
 
+import engine.stuff.GameEvent;
+import engine.stuff.Decision;
+import engine.stuff.Music;
 import engine.Ref;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,7 +18,10 @@ import javax.imageio.ImageIO;
  */
 public class FileParser {
 
-    public static LinkedList<SmallNode> parseBigNode(File file) throws FileNotFoundException, IOException {
+    private FileParser() {
+    }
+
+    public static LinkedList<SmallNode> parseBigNode(File file, String imagePath, String musicPath) throws FileNotFoundException, IOException {
         LinkedList<SmallNode> nodeList = new LinkedList<>();
         Scanner scanner = new Scanner(file);
         scanner.useDelimiter("//Z");
@@ -24,13 +30,13 @@ public class FileParser {
         screenBlockArray = fileContent.split("##");
         for (int i = 0; i < screenBlockArray.length; i++) {
             if (!screenBlockArray[i].trim().isEmpty()) {
-                nodeList.add(parseSmallNode(new StringBuilder(screenBlockArray[i])));
+                nodeList.add(parseSmallNode(new StringBuilder(screenBlockArray[i]), imagePath, musicPath));
             }
         }
         return nodeList;
     }
 
-    private static SmallNode parseSmallNode(StringBuilder screenBlock) throws IOException {
+    private static SmallNode parseSmallNode(StringBuilder screenBlock, String imagePath, String musicPath) throws IOException {
         Ref<DataPackage<BufferedImage>> slot1 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
                 slot2 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
                 slot3 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
@@ -44,7 +50,7 @@ public class FileParser {
         removeComments(screenBlock);
         String[] splittedScreenBlock = screenBlock.toString().split("#");
 
-        parseLogicBlock(splittedScreenBlock[0], slot1, slot2, slot3, slot4, background, gameEvent, music);
+        parseLogicBlock(splittedScreenBlock[0], slot1, slot2, slot3, slot4, background, gameEvent, music, imagePath, musicPath);
         parseTextBlock(splittedScreenBlock[1], text, decisionList);
 
         return new SmallNode(slot1.object, slot2.object, slot3.object,
@@ -56,7 +62,8 @@ public class FileParser {
     private static void parseLogicBlock(String logic, Ref<DataPackage<BufferedImage>> slot1,
             Ref<DataPackage<BufferedImage>> slot2, Ref<DataPackage<BufferedImage>> slot3,
             Ref<DataPackage<BufferedImage>> slot4, Ref<DataPackage<BufferedImage>> background,
-            Ref<DataPackage<GameEvent>> gameEvent, Ref<DataPackage<Music>> music) throws IOException {
+            Ref<DataPackage<GameEvent>> gameEvent, Ref<DataPackage<Music>> music,
+            String imagePath, String musicPath) throws IOException {
         logic = logic.replaceAll("\\s+", "");
         String[] line = logic.split(";");
         for (int i = 0; i < line.length; i++) {
@@ -80,31 +87,31 @@ public class FileParser {
             switch (part[0]) {
                 case "slot1":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(part[1]));
+                        img = ImageIO.read(new File(imagePath + part[1]));
                     }
                     slot1.object = new DataPackage<>(img, action);
                     break;
                 case "slot2":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(part[1]));
+                        img = ImageIO.read(new File(imagePath + part[1]));
                     }
                     slot2.object = new DataPackage<>(img, action);
                     break;
                 case "slot3":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(part[1]));
+                        img = ImageIO.read(new File(imagePath + part[1]));
                     }
                     slot3.object = new DataPackage<>(img, action);
                     break;
                 case "slot4":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(part[1]));
+                        img = ImageIO.read(new File(imagePath + part[1]));
                     }
                     slot4.object = new DataPackage<>(img, action);
                     break;
                 case "background":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(part[1]));
+                        img = ImageIO.read(new File(imagePath + part[1]));
                     }
                     background.object = new DataPackage<>(img, action);
                     break;
@@ -117,7 +124,7 @@ public class FileParser {
                     break;
                 case "music":
                     if (action == DataAction.LOAD) {
-                        musicFile = new Music(part[1]);
+                        musicFile = new Music(musicPath + part[1]);
                     }
                     music.object = new DataPackage<>(musicFile, action);
                     break;
