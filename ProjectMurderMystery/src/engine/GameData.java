@@ -22,11 +22,11 @@ public class GameData {
 
     private LinkedList<SmallNode> nodes;
 
-    private Ref<BufferedImage> slot1;
-    private Ref<BufferedImage> slot2;
-    private Ref<BufferedImage> slot3;
-    private Ref<BufferedImage> slot4;
-    private Ref<BufferedImage> background;
+    private final Ref<BufferedImage> slot1;
+    private final Ref<BufferedImage> slot2;
+    private final Ref<BufferedImage> slot3;
+    private final Ref<BufferedImage> slot4;
+    private final Ref<BufferedImage> background;
     private GameEvent gameEvent;
     private Music music;
     private String text;
@@ -37,7 +37,7 @@ public class GameData {
         Scanner scanner = new Scanner(new File("stories/storyselect"));
         folder = "stories/" + scanner.nextLine() + "/";
         String path = getTextPath() + "start.txt";
-        nodes = FileParser.parseBigNode(new File(path), getImagePath(), getSoundPath());
+        nodes = FileParser.parseBigNode(new File(path), getImagePath(), getSoundPath(), getTextPath());
         slot1 = new Ref<>();
         slot2 = new Ref<>();
         slot3 = new Ref<>();
@@ -59,11 +59,15 @@ public class GameData {
 
     public void nextNode(int decision) {
         try {
-            nodes = FileParser.parseBigNode(decisionList.get(decision).file, getImagePath(), getSoundPath());
+            nodes = FileParser.parseBigNode(decisionList.get(decision).file, getImagePath(), getSoundPath(), getTextPath());
             nextNode();
         } catch (IOException ex) {
             Logger.getLogger(GameData.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public boolean hasNextNode() {
+        return !nodes.isEmpty();
     }
 
     public void nextNode() {

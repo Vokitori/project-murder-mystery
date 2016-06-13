@@ -9,9 +9,12 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ##
 // Das ist ein Kommentar! Wenn die Zeile damit beginnt, wird das Enter auch auskommentiert!
-
+slot2 = dummy2.png;
+slot1;
 #
 Du hast heißhunger auf Arme.
+##
+#
 {ent1.txt|Ich widersetze mich meinen kannibalistischen Neigungen.}//
 {ent2.txt|Ich beiße Schwalb den Arm ab.}
 // 1720 - 1900

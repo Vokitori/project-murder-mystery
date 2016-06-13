@@ -21,7 +21,7 @@ public class FileParser {
     private FileParser() {
     }
 
-    public static LinkedList<SmallNode> parseBigNode(File file, String imagePath, String musicPath) throws FileNotFoundException, IOException {
+    public static LinkedList<SmallNode> parseBigNode(File file, String imagePath, String musicPath, String textPath) throws FileNotFoundException, IOException {
         LinkedList<SmallNode> nodeList = new LinkedList<>();
         Scanner scanner = new Scanner(file);
         scanner.useDelimiter("//Z");
@@ -30,13 +30,13 @@ public class FileParser {
         screenBlockArray = fileContent.split("##");
         for (int i = 0; i < screenBlockArray.length; i++) {
             if (!screenBlockArray[i].trim().isEmpty()) {
-                nodeList.add(parseSmallNode(new StringBuilder(screenBlockArray[i]), imagePath, musicPath));
+                nodeList.add(parseSmallNode(new StringBuilder(screenBlockArray[i]), imagePath, musicPath, textPath));
             }
         }
         return nodeList;
     }
 
-    private static SmallNode parseSmallNode(StringBuilder screenBlock, String imagePath, String musicPath) throws IOException {
+    private static SmallNode parseSmallNode(StringBuilder screenBlock, String imagePath, String musicPath, String textPath) throws IOException {
         Ref<DataPackage<BufferedImage>> slot1 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
                 slot2 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
                 slot3 = new Ref<>(new DataPackage<BufferedImage>(null, DataAction.KEEP)),
@@ -51,7 +51,7 @@ public class FileParser {
         String[] splittedScreenBlock = screenBlock.toString().split("#");
 
         parseLogicBlock(splittedScreenBlock[0], slot1, slot2, slot3, slot4, background, gameEvent, music, imagePath, musicPath);
-        parseTextBlock(splittedScreenBlock[1], text, decisionList);
+        parseTextBlock(splittedScreenBlock[1], text, decisionList, textPath);
 
         return new SmallNode(slot1.object, slot2.object, slot3.object,
                 slot4.object, background.object, gameEvent.object,
@@ -72,13 +72,17 @@ public class FileParser {
             }
             String[] part = line[i].split("=");
             DataAction action = DataAction.LOAD;
-            switch (part[1].toLowerCase()) {
-                case "keep":
-                    action = DataAction.KEEP;
-                    break;
-                case "delete":
-                    action = DataAction.DELETE;
-                    break;
+            if (part.length == 1) {
+                action = DataAction.DELETE;
+            } else {
+                switch (part[1].toLowerCase()) {
+                    case "keep":
+                        action = DataAction.KEEP;
+                        break;
+                    case "delete":
+                        action = DataAction.DELETE;
+                        break;
+                }
             }
 
             BufferedImage img = null;
@@ -135,17 +139,17 @@ public class FileParser {
     }
 //</editor-fold>
 
-    private static void parseTextBlock(String textBox, Ref<String> text, Ref<LinkedList<Decision>> decisionList) {
+    private static void parseTextBlock(String textBox, Ref<String> text, Ref<LinkedList<Decision>> decisionList, String textPath) {
         textBox = textBox.trim();
         if (!textBox.contains("{")) {
             text.object = textBox;
         } else {
-            parseDecision(new StringBuilder(textBox), decisionList, text);
+            parseDecision(new StringBuilder(textBox), decisionList, text, textPath);
         }
 
     }
 
-    private static void parseDecision(StringBuilder textBox, Ref<LinkedList<Decision>> decisionList, Ref<String> text) {
+    private static void parseDecision(StringBuilder textBox, Ref<LinkedList<Decision>> decisionList, Ref<String> text, String textPath) {
         ArrayList<String> substringList = new ArrayList<>();
         while (textBox.indexOf("{") != -1) {
             int start = textBox.indexOf("{");
@@ -155,14 +159,14 @@ public class FileParser {
             textBox.deleteCharAt(textBox.indexOf("}"));
         }
         text.object = textBox.toString().trim();
-        substringToDecision(decisionList, substringList);
+        substringToDecision(decisionList, substringList, textPath);
     }
 
-    private static void substringToDecision(Ref<LinkedList<Decision>> decisionList, ArrayList<String> substringList) {
+    private static void substringToDecision(Ref<LinkedList<Decision>> decisionList, ArrayList<String> substringList, String textPath) {
         decisionList.object = new LinkedList<>();
         for (int i = 0; i < substringList.size(); i++) {
             String[] arr = substringList.get(i).split("\\|");
-            Decision decision = new Decision(new File(arr[0]), arr[1]);
+            Decision decision = new Decision(new File(textPath + arr[0]), arr[1]);
             decisionList.object.add(decision);
         }
     }

@@ -24,7 +24,7 @@ public class CreditsScreen extends Screen {
         
         initComponents();
         try {
-            backgroundImage = ImageIO.read(new File("img/credits.png"));
+            backgroundImage = ImageIO.read(new File("data/credits.png"));
         } catch (IOException ex) {
             Logger.getLogger(CreditsScreen.class.getName()).log(Level.SEVERE, null, ex);
         }

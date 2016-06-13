@@ -16,17 +16,35 @@ import javax.swing.JPanel;
 public class ImagePanel extends JPanel {
 
     private Ref<BufferedImage> image;
+    protected boolean keepRatio = false;
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if (image != null) {
-            g.drawImage(image.object, 0, 0, getWidth(), getHeight(), this);
+        if (image.object != null) {
+            int x1, y1;
+            int w = getWidth(), h = getHeight();
+            if (keepRatio) {
+                double imageRatio = (double) image.object.getWidth() / image.object.getHeight();
+                double panelRatio = (double) getWidth() / getHeight();
+                if (panelRatio > imageRatio) {
+                    w = (int) (imageRatio * getHeight());
+                    h = getHeight();
+                } else {
+                    w = getWidth();
+                    h = (int) (getWidth() / imageRatio);
+                }
+            }
+            g.drawImage(image.object, (int) ((getWidth() - w) / 2.0), getHeight() - h, w, h, this);
         }
     }
 
     public void setImage(Ref<BufferedImage> image) {
         this.image = image;
+    }
+
+    public void setKeepRatio(boolean keepRatio) {
+        this.keepRatio = keepRatio;
     }
 
 }

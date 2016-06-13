@@ -5,7 +5,6 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * @author link
@@ -19,7 +18,7 @@ public class KeyManager {
             case KeyEvent.KEY_PRESSED:
                 KEYS.values().stream().filter((Key key) -> {
                     return key.keyCode == ke.getKeyCode();
-                }).forEach((Key key) -> (key.consumer.accept(key.object)));
+                }).forEach((Key key) -> key.command.execute());
                 break;
         }
         return false;
@@ -28,12 +27,20 @@ public class KeyManager {
     private KeyManager() {
     }
 
-    public synchronized static <T> void addKey(String name, int keyCode, T object, Consumer<T> consumer) {
-        KEYS.put(name, new Key(keyCode, object, consumer));
+    public synchronized static void addKey(String name, int keyCode, Command command) {
+        KEYS.put(name, new Key(keyCode, command));
     }
 
     public synchronized static Key removeKey(String name) {
         return KEYS.remove(name);
+    }
+
+    public synchronized static void clear() {
+        KEYS.clear();
+    }
+
+    public static String toStringStatic() {
+        return KEYS.toString();
     }
 
     public static boolean isListening() {
@@ -59,21 +66,18 @@ public class KeyManager {
     public static class Key {
 
         public final int keyCode;
-        public final Object object;
-        public final Consumer consumer;
+        public final Command command;
 
-        public Key(int keyCode, Object object, Consumer consumer) {
+        public Key(int keyCode, Command command) {
             this.keyCode = keyCode;
-            this.object = object;
-            this.consumer = consumer;
+            this.command = command;
         }
 
         @Override
         public int hashCode() {
-            int hash = 7;
-            hash = 61 * hash + this.keyCode;
-            hash = 61 * hash + Objects.hashCode(this.object);
-            hash = 61 * hash + Objects.hashCode(this.consumer);
+            int hash = 3;
+            hash = 23 * hash + this.keyCode;
+            hash = 23 * hash + Objects.hashCode(this.command);
             return hash;
         }
 
@@ -90,6 +94,5 @@ public class KeyManager {
             }
             return this.keyCode == ((Key) obj).keyCode;
         }
-
     }
 }

@@ -1,0 +1,6 @@
+//alles zwischen zwei rauten := screenBlock 
+music = eatdatschwalb.mp3;
+event = shake;
+slot1 = dummy.png;
+#
+Du verzehrst Schwalbs Arm, doch dein heißhunger lässt dich nicht stoppen. Zuerst sein arm, dann der restliche schwalb, und daraufhin die restliche FH! Du wirst der stärkste Zombie aller Zeiten.

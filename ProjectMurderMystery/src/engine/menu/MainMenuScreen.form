@@ -17,22 +17,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="newPath" min="-2" pref="107" max="-2" attributes="0"/>
-                          <Component id="load" min="-2" pref="107" max="-2" attributes="0"/>
-                          <Component id="options" min="-2" pref="107" max="-2" attributes="0"/>
-                          <Component id="credits" min="-2" pref="107" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                      <Component id="leaveGame" min="-2" pref="145" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="newPath" linkSize="1" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="load" linkSize="1" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="options" linkSize="1" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="credits" linkSize="1" min="-2" pref="107" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="121" max="32767" attributes="0"/>
+              <Component id="leaveGame" min="-2" pref="145" max="-2" attributes="0"/>
+              <EmptySpace pref="121" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,13 +37,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="newPath" min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="newPath" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="load" min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="load" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="options" min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="options" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="credits" min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="credits" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace pref="46" max="32767" attributes="0"/>
               <Component id="leaveGame" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
