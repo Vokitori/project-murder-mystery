@@ -9,7 +9,7 @@ import javax.swing.JPanel;
  *
  * @author Voki
  */
-public abstract class Screen extends JPanel {
+public abstract class Screen extends ImagePanel {
 
     protected final Game game;
     protected boolean active = false;

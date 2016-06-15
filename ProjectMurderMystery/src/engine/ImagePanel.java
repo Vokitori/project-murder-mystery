@@ -15,12 +15,15 @@ import javax.swing.JPanel;
  */
 public class ImagePanel extends JPanel {
 
-    private Ref<BufferedImage> image;
+    private Ref<BufferedImage> image = new Ref<>();
     protected boolean keepRatio = false;
+
+    public ImagePanel() {
+        setOpaque(false);
+    }
 
     @Override
     public void paint(Graphics g) {
-        super.paint(g);
         if (image.object != null) {
             int x1, y1;
             int w = getWidth(), h = getHeight();
@@ -37,6 +40,7 @@ public class ImagePanel extends JPanel {
             }
             g.drawImage(image.object, (int) ((getWidth() - w) / 2.0), getHeight() - h, w, h, this);
         }
+        super.paint(g);
     }
 
     public void setImage(Ref<BufferedImage> image) {
