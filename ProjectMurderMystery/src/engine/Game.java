@@ -8,12 +8,16 @@ import engine.menu.MainMenuScreen;
 import engine.menu.CreditsScreen;
 import engine.menu.TreeScreen;
 import engine.menu.KeybindingsScreen;
+import engine.menu.Pause;
 import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -52,6 +56,25 @@ public class Game {
                 }
             }
         });
+        try {
+            //        for (Screen screen : menuList) {
+//            if(!(screen instanceof CreditsScreen)||!(screen instanceof InGameScreen)||!(screen instanceof Pause)||!(screen instanceof OptionsScreen)) {
+//                try {
+//                    screen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+//                } catch (IOException ex) {
+//                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            }
+//        }
+mainScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+keybindingsScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+newPathScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+optionsScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+treeScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public void load() {

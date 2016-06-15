@@ -1,6 +1,7 @@
 package engine.menu;
 
 import engine.Game;
+import engine.Ref;
 import engine.Screen;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -17,14 +18,12 @@ import javax.imageio.ImageIO;
  * @author Voki
  */
 public class CreditsScreen extends Screen {
-
-    private BufferedImage backgroundImage = null;
     public CreditsScreen(Game game) {
         super(game);
         
         initComponents();
         try {
-            backgroundImage = ImageIO.read(new File("data/credits.png"));
+        setImage(new Ref<>(ImageIO.read(new File("data/credits.png"))));
         } catch (IOException ex) {
             Logger.getLogger(CreditsScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -34,14 +33,6 @@ public class CreditsScreen extends Screen {
             game.setScreen(game.mainScreen);
         });
     }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g); 
-        g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), null);
-    }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -54,9 +45,11 @@ public class CreditsScreen extends Screen {
 
         creditsText.setEditable(false);
         creditsText.setColumns(20);
-        creditsText.setFont(new java.awt.Font("Book Antiqua", 0, 24)); // NOI18N
+        creditsText.setFont(new java.awt.Font("Courier 10 Pitch", 0, 24)); // NOI18N
+        creditsText.setForeground(new java.awt.Color(0, 0, 0));
         creditsText.setRows(5);
-        creditsText.setText("Game by:\nThomas,\nJulia,\nViktoria,\nMaximilian");
+        creditsText.setText("Spiel gemacht von:\nThomas,\nViktoria,\nJulia,\nMaximilian");
+        creditsText.setCaretColor(new java.awt.Color(255, 255, 255));
         creditsText.setOpaque(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -66,19 +59,19 @@ public class CreditsScreen extends Screen {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
+                        .addGap(376, 376, 376)
                         .addComponent(back))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(242, 242, 242)
+                        .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(124, 124, 124)
                 .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addComponent(back)
                 .addContainerGap())
         );

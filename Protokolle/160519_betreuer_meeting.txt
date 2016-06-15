@@ -1,8 +1,8 @@
-start:14:10
+﻿start:14:10
 ende:15:40
 
 BESPROCHEN:
-besprechung speicherstände, preziesere formulierung wie die speicherung funktioniert
+besprechung speicherstände, präzise formulierung wie die speicherung funktioniert
 2.2 eingefügt: beschreibung des textes und namensgebung
 anpassung der punkte
 einfügen von "basiert auf"
