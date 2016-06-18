@@ -66,11 +66,14 @@ public class Game {
 //                }
 //            }
 //        }
-mainScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
-keybindingsScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
-newPathScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
-optionsScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
-treeScreen.setImage(new Ref<>(ImageIO.read(new File("data/bg.png"))));
+
+File menuBackground = new File("data/bg.png");
+
+mainScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+keybindingsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+newPathScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+optionsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+treeScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
