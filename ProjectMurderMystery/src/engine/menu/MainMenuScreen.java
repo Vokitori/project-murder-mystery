@@ -42,11 +42,11 @@ public class MainMenuScreen extends Screen {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        credits = new javax.swing.JButton();
-        newPath = new javax.swing.JButton();
-        load = new javax.swing.JButton();
+        credits = new ImageButton();
+        newPath = new ImageButton();
+        load = new ImageButton();
         leaveGame = new javax.swing.JButton();
-        options = new javax.swing.JButton();
+        options = new ImageButton();
 
         credits.setText("Credits");
 

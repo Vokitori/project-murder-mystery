@@ -56,16 +56,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Credits"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="newPath">
       <Properties>
         <Property name="text" type="java.lang.String" value="New Path"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="load">
       <Properties>
         <Property name="text" type="java.lang.String" value="Load"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="leaveGame">
       <Properties>
@@ -76,6 +85,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Options"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
