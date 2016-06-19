@@ -1,0 +1,69 @@
+//ACTI_1
+slot1 = ViktoriaHappy.png;
+slot4 = SchwalbNormal.png;
+background = Gang2.png;
+#
+V: Naja, wenn du schon so großzügig anbietest.
+##
+#
+B: Das gehört sich doch schließlich als Gentleman.
+##
+#
+V: Du Pfosten! XD
+##
+slot1= ViktoriaNormal.png;
+background = Gang3.png;
+#
+V: OK, das ist der vereinbarte Raum. Ich werde wohl nicht lange brauchen. Warte hier draußen auf mich und kein Lauschen, ok?
+##
+#
+B: Als ob mir sowas jemals in den Sinn kommen würde.
+##
+#
+V: Schwalb, ich will lieber gar nicht wissen, was dir alles in den Sinn kommt. -.-' 
+##
+slot4 = delete;
+background = Raum2.png;
+#
+V: Hallo, Nelson? Ich bin da. Hallo? (Komisch, ist er noch nicht da? Aber es ist doch schon lange nach Schulschluss. Ich hoffe jetzt echt mal, dass es kein abgefuckter Streich ist oder so. Wär schon ärger geschmacklos. Schließlich wollte ich mit ihm über seinen verstorbenen Freund reden. Ich wart mal ein paar Minuten.)
+##
+#
+Ein paar Minuten später...
+##
+#
+V: (OK, ich bin jetzt echt urangepisst. Was soll der Scheiß?!)
+##
+# 
+*leises Fallgeräusch*
+##
+#
+V: Wahh! Wer ist da?? (Oh, niemand. Krieg dich wieder ein, Viktoria! Schwalb braucht nicht noch mehr Grund, sich über dich zu amüsieren. Aber woher ist das Geräusch gekommen? Ah, da liegt ja was am Boden. Ein...Schlüsselanhänger? Ist der vorher schon da gelegen, komisch. Ob der Nelson gehört? Schaut ziemlich girly-mäßig aus, aber man kann ja nie wissen. XD Ich nehm ihn mal mit, kann ihn ja morgen bei Lost&Found abgeben. Hab jetzt echt genug davon, hier blöd rumzustehen. Ich geh heim und beschwer mich morgen bei dem Idioten, grrr.)
+##
+#
+(Schatten im Fenster zu sehen, als Viktoria Raum verlässt)
+##
+background = Gang3.png;
+#
+V: Schwalb, ich bin fertig, gehn- Schwalb? Wo steckst du? Hast du dich jetzt auch aus dem Staub gemacht, du Elendiger?! Oh mein Gott, was geht mit euch allen ab! Ich glaub, ich dreh noch durch!!
+##
+background = Gang2.png;
+#
+V: (Stupid, stupid, stupid. Lassen mich einfach alle hier allein zurück, diese Asozialen! Morgen erzähl ich denen was! Und jetzt muss ich auch noch dringend pinkeln, super!)
+##
+background = WC_Waschbecken.png;
+#
+*Geräusch von laufendem Wasser*
+##
+#
+V: (Vielleicht war es doch keine gute Idee, sich aufzuteilen und nach Hinweisen auf Simons Tod zu suchen. Morgen red ich mit Julia und den anderen, vielleicht hatten die mehr Glück als ich. Immerhin- huh?)
+##
+#
+*Bild: Spiegel über Wachbecken, zeigt Viktorias erstauntes Gesicht und die Tür zu einer Toilettenkabine, die leicht angelehnt ist und aus der eine schattige Gestalt mit roten Augen herausschaut 
+##
+#
+V: *dreht sich um* Ahh! WER IST DA!? (Die Tür ist zu! Aber ich hab mir das doch sicher nicht eingebildet, oder?? Oh mein Gott, oh mein Gott. Ich hasse sowas! Soll ich nachschauen? Was wenn...ich mein, eigentlich kann es ja nichts sein, aber es ist doch irgendwie voll gruselig. WAS SOLL ICH TUN?)
+##
+#
+Soll Viktoria die Tür zur Kabine aufmachen und hineinsehen?
+{ACTII_1F.txt|Ja}
+{ACTII_2F.txt|Nein}
