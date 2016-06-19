@@ -19,9 +19,16 @@ public class ImagePanel extends JPanel {
 
     private Ref<BufferedImage> image = new Ref<>();
     protected boolean keepRatio = false;
+    private boolean inverted = false;
 
     public ImagePanel() {
+        this(false);
+    }
+    
+    
+    public ImagePanel(boolean inverted) {
         setOpaque(false);
+        this.inverted = inverted;
     }
 
     @Override
@@ -43,7 +50,10 @@ public class ImagePanel extends JPanel {
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
             g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-            
+            if(inverted){
+                w = -w;
+                h = -h;
+            }
             g2d.drawImage(image.object, (int) ((getWidth() - w) / 2.0), getHeight() - h, w, h, this);
         }
         super.paint(g);

@@ -13,6 +13,11 @@ public class ImageButton extends JButton {
 
     private Ref<BufferedImage> image = new Ref<>();
 
+    public ImageButton() {
+        super();
+        setContentAreaFilled(false);
+    }
+
     @Override
     public void paint(Graphics g) {
         if (image.object != null) {
@@ -21,9 +26,9 @@ public class ImageButton extends JButton {
             g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
             g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
             g2d.drawImage(image.object, 0, 0, getWidth(), getHeight(), this);
-        } else {
-            paintComponent(g);
+
         }
+        paintComponent(g);
         paintBorder(g);
         paintChildren(g);
     }
