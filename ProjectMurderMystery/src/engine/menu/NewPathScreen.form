@@ -20,7 +20,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="back" min="-2" pref="68" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-              <Component id="viktoriaButton" min="-2" pref="96" max="-2" attributes="0"/>
+              <Component id="viktraButton" min="-2" pref="96" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" pref="99" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
@@ -39,7 +39,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" max="-2" attributes="0">
                           <Component id="jButton2" alignment="3" pref="586" max="32767" attributes="0"/>
-                          <Component id="viktoriaButton" alignment="3" pref="0" max="32767" attributes="0"/>
+                          <Component id="viktraButton" alignment="3" pref="0" max="32767" attributes="0"/>
                           <Component id="jButton3" alignment="3" pref="0" max="32767" attributes="0"/>
                           <Component id="jButton4" alignment="3" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -61,7 +61,7 @@
         <Property name="text" type="java.lang.String" value="back"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="viktoriaButton">
+    <Component class="javax.swing.JButton" name="viktraButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
