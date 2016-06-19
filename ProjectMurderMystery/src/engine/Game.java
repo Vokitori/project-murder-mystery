@@ -1,14 +1,6 @@
 package engine;
 
-import engine.menu.NewPathScreen;
-import engine.menu.IntroScreen;
-import engine.menu.OptionsScreen;
-import engine.menu.InGameScreen;
-import engine.menu.MainMenuScreen;
-import engine.menu.CreditsScreen;
-import engine.menu.TreeScreen;
-import engine.menu.KeybindingsScreen;
-import engine.menu.Pause;
+import engine.menu.*;
 import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -20,6 +12,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -67,13 +60,13 @@ public class Game {
 //            }
 //        }
 
-File menuBackground = new File("data/bg.png");
+            File menuBackground = new File("data/bg.png");
 
-mainScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
-keybindingsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
-newPathScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
-optionsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
-treeScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+            mainScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+            keybindingsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+            newPathScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+            optionsScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
+            treeScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -87,7 +80,7 @@ treeScreen.setImage(new Ref<>(ImageIO.read(menuBackground)));
         window.setLocationRelativeTo(null);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

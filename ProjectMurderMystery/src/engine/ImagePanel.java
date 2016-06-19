@@ -25,7 +25,6 @@ public class ImagePanel extends JPanel {
     @Override
     public void paint(Graphics g) {
         if (image.object != null) {
-            int x1, y1;
             int w = getWidth(), h = getHeight();
             if (keepRatio) {
                 double imageRatio = (double) image.object.getWidth() / image.object.getHeight();

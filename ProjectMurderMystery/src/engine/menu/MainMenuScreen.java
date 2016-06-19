@@ -50,7 +50,6 @@ public class MainMenuScreen extends Screen {
 
         credits.setText("Credits");
 
-        newPath.setIcon(new javax.swing.ImageIcon(getClass().getResource("/engine/menu/button.png"))); // NOI18N
         newPath.setText("New Path");
 
         load.setText("Load");
