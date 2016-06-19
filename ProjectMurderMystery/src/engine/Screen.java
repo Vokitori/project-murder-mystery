@@ -3,7 +3,6 @@ package engine;
 import java.awt.Component;
 import java.awt.KeyboardFocusManager;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 /**
  *

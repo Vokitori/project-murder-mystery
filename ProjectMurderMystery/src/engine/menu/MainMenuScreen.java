@@ -1,13 +1,16 @@
 package engine.menu;
 
 import engine.Game;
-import engine.GameData;
+import engine.ImageButton;
 import engine.Ref;
 import engine.Screen;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.JButton;
 
 /**
  *
@@ -15,42 +18,62 @@ import javax.swing.JButton;
  */
 public class MainMenuScreen extends Screen {
 
+    public static final Ref<BufferedImage> BUTTON_IMAGE = new Ref<>();
+
+    static {
+        try {
+            BUTTON_IMAGE.object = ImageIO.read(new File("data/button.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenuScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public MainMenuScreen(Game game) {
         super(game);
 
         initComponents();
-        
+
         newPath.addActionListener((ActionEvent e) -> {
-              game.setScreen(game.newPathScreen);
+            game.setScreen(game.newPathScreen);
         });
-       load.addActionListener((ActionEvent e) -> {
-              game.setScreen(game.treeScreen);
+        load.addActionListener((ActionEvent e) -> {
+            game.setScreen(game.treeScreen);
         });
         options.addActionListener((ActionEvent e) -> {
-              game.setScreen(game.optionsScreen);
+            game.setScreen(game.optionsScreen);
         });
         credits.addActionListener((ActionEvent e) -> {
-              game.setScreen(game.creditsScreen);
+            game.setScreen(game.creditsScreen);
         });
         leaveGame.addActionListener((ActionEvent e) -> {
             game.window.dispose();
         });
-        
+
+        try {
+            Ref<BufferedImage> img = new Ref<>(ImageIO.read(new File("data/NotFree.png")));
+            ((ImageButton) credits).setImage(BUTTON_IMAGE);
+            ((ImageButton) leaveGame).setImage(BUTTON_IMAGE);
+            ((ImageButton) load).setImage(BUTTON_IMAGE);
+            ((ImageButton) newPath).setImage(BUTTON_IMAGE);
+            ((ImageButton) options).setImage(BUTTON_IMAGE);
+
+        } catch (IOException ex) {
+            Logger.getLogger(NewPathScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        credits = new javax.swing.JButton();
-        newPath = new javax.swing.JButton();
-        load = new javax.swing.JButton();
-        leaveGame = new javax.swing.JButton();
-        options = new javax.swing.JButton();
+        credits = new ImageButton();
+        newPath = new ImageButton();
+        load = new ImageButton();
+        leaveGame = new ImageButton();
+        options = new ImageButton();
 
         credits.setText("Credits");
 
-        newPath.setIcon(new javax.swing.ImageIcon(getClass().getResource("/engine/menu/button.png"))); // NOI18N
         newPath.setText("New Path");
 
         load.setText("Load");

@@ -6,6 +6,8 @@
 package engine;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
@@ -25,7 +27,6 @@ public class ImagePanel extends JPanel {
     @Override
     public void paint(Graphics g) {
         if (image.object != null) {
-            int x1, y1;
             int w = getWidth(), h = getHeight();
             if (keepRatio) {
                 double imageRatio = (double) image.object.getWidth() / image.object.getHeight();
@@ -38,7 +39,12 @@ public class ImagePanel extends JPanel {
                     h = (int) (getWidth() / imageRatio);
                 }
             }
-            g.drawImage(image.object, (int) ((getWidth() - w) / 2.0), getHeight() - h, w, h, this);
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            
+            g2d.drawImage(image.object, (int) ((getWidth() - w) / 2.0), getHeight() - h, w, h, this);
         }
         super.paint(g);
     }

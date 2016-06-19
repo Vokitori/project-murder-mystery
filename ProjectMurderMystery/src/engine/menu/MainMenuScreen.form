@@ -56,29 +56,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Credits"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="newPath">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/engine/menu/button.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="New Path"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="load">
       <Properties>
         <Property name="text" type="java.lang.String" value="Load"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="leaveGame">
       <Properties>
         <Property name="text" type="java.lang.String" value="Leave Game"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="options">
       <Properties>
         <Property name="text" type="java.lang.String" value="Options"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ImageButton()"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
