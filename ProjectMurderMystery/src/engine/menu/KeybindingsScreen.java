@@ -131,12 +131,16 @@ public class KeybindingsScreen extends Screen {
 
         back.setText("back");
 
+        label1.setForeground(new java.awt.Color(255, 255, 255));
         label1.setText("Text beschleunigen");
 
+        label2.setForeground(new java.awt.Color(255, 255, 255));
         label2.setText("Auswählen");
 
+        label3.setForeground(new java.awt.Color(255, 255, 255));
         label3.setText("Rauf");
 
+        label4.setForeground(new java.awt.Color(255, 255, 255));
         label4.setText("Runter");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);

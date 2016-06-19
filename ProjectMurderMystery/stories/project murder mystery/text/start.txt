@@ -10,7 +10,6 @@ N: ...
 ##
 slot1 = NelsonNormal.png;
 slot4 = ViktoriaHappy.png;
-background = Gang1.png;
 #
 V: Hi, Nelson!
 ##
@@ -67,7 +66,7 @@ V: Ich verrate es dir, wenn du mir alles erzählst, was einen möglichen Zusamme
 N: ...
 ##
 #
-V: So?
+V: Also?
 ##
 #
 N: Nicht hier. Treffen wir uns heute Abend in Raum C4.05, nachdem alle nach Hause gegangen sind. Du musst mir versprechen, dass du allein kommst.
@@ -120,7 +119,7 @@ B: Entschuldige, Viktoria. Ich hab für einen Moment vergessen, wie leicht du do
 V: Grrrhh.
 ##
 #
-B: Diese Tatsache macht es jedoch umso verwunderlicher, dass du bei nachts hier in der leeren Schule herumschleichst. Darf man sich nach dem Grund erkundigen?
+B: Diese Tatsache macht es jedoch umso verwunderlicher, dass du nachts hier in der leeren Schule herumschleichst. Darf man sich nach dem Grund erkundigen?
 ##
 #
 V: Also, erstens bin nicht ich diejenige, die "schleicht". Zweitens habe ich noch was zu erledigen und drittens könnte ich dir dieselbe Fragen stellen, Schwalb.
@@ -145,5 +144,5 @@ V: (Nelson wollte, dass ich allein komme. Aber vielleicht würde ich mich trotzd
 ##
 #
 Nimmst du Schwalbs Angebot, Viktoria zu begleiten, an?
-{ACTII_1F.txt|Ja}
+{ACTI_1F.txt|Ja}
 {ACTI_2F.txt|Nein}
