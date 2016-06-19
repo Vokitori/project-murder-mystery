@@ -39,6 +39,8 @@ public class OptionsScreen extends Screen {
         musicSlider = new javax.swing.JSlider();
         soundSlider = new javax.swing.JSlider();
 
+        jPanel1.setOpaque(false);
+
         soundLabel.setText("Soundeffects");
 
         keybindings.setText("Keybindings");
