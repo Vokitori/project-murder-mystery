@@ -35,6 +35,7 @@ public class MainMenuScreen extends Screen {
         leaveGame.addActionListener((ActionEvent e) -> {
             game.window.dispose();
         });
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -49,6 +50,7 @@ public class MainMenuScreen extends Screen {
 
         credits.setText("Credits");
 
+        newPath.setIcon(new javax.swing.ImageIcon(getClass().getResource("/engine/menu/button.png"))); // NOI18N
         newPath.setText("New Path");
 
         load.setText("Load");
@@ -80,7 +82,7 @@ public class MainMenuScreen extends Screen {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(126, 126, 126)
                 .addComponent(newPath, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(load, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -88,7 +90,7 @@ public class MainMenuScreen extends Screen {
                 .addComponent(options, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(credits, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
                 .addComponent(leaveGame, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

@@ -1,23 +1,10 @@
-//alles zwischen zwei rauten := screenBlock 
-music = eatdatschwalb.mp3;
-event = shake;
-slot1 = ViHappy.png;
-background = bg.png;
+﻿##
+slot1 = ViktoriaNormal.png;
+background = Raum1.png;
 #
-Du wurdest von einem Zombie gebissen. TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
+Hm, anscheinend hat Simon's Klasse gerade Mathematik in Raum A3.06. Ich werde draußen am Gang warten, bis die Stunde vorbei ist.
 ##
-// Das ist ein Kommentar! Wenn die Zeile damit beginnt, wird das Enter auch auskommentiert!
-slot2 = dummy2.png;
-slot1;
+slot1 = NelsonNormal.png;
+background = Gang1.png;
 #
-Du hast heißhunger auf Arme.
-##
-#
-{ent1.txt|Ich widersetze mich meinen kannibalistischen Neigungen.}//
-{ent2.txt|Ich beiße Schwalb den Arm ab.}
-// 1720 - 1900
-//DELETE, KEEP, LOAD; 
-##
+...
