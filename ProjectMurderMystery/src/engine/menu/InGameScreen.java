@@ -137,6 +137,7 @@ public class InGameScreen extends Screen {
         textBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         textPanel.add(textBox, java.awt.BorderLayout.CENTER);
 
+        choicePanel.setBackground(new java.awt.Color(150, 150, 150));
         choicePanel.setLayout(new java.awt.BorderLayout());
 
         decisionTop.setText("choiceTop");
@@ -165,6 +166,7 @@ public class InGameScreen extends Screen {
         textDecisionPanel.setBackground(new java.awt.Color(220, 76, 76));
         textDecisionPanel.setMaximumSize(new java.awt.Dimension(559, 101));
         textDecisionPanel.setMinimumSize(new java.awt.Dimension(559, 101));
+        textDecisionPanel.setOpaque(false);
         textDecisionPanel.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout slot1Layout = new javax.swing.GroupLayout(slot1);
