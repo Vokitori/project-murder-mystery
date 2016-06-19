@@ -45,9 +45,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="back"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backActionPerformed"/>
-      </Events>
     </Component>
     <Container class="java.awt.Panel" name="panel1">
 
@@ -126,9 +123,6 @@
           </Properties>
         </Component>
         <Component class="java.awt.TextField" name="textField1">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="java.awt.TextField" name="textField2">
         </Component>
