@@ -125,8 +125,8 @@ public class InGameScreen extends Screen {
         textlog = new javax.swing.JButton();
         pauseButton = new javax.swing.JButton();
         textDecisionPanel = new javax.swing.JPanel();
-        slot1 = new engine.ImagePanel();
-        slot2 = new engine.ImagePanel();
+        slot1 = new engine.ImagePanel(true);
+        slot2 = new engine.ImagePanel(true);
         slot3 = new engine.ImagePanel();
         slot4 = new engine.ImagePanel();
 

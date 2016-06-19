@@ -169,7 +169,7 @@
         </Container>
         <Container class="javax.swing.JPanel" name="slot1">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new engine.ImagePanel()"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new engine.ImagePanel(true)"/>
           </AuxValues>
 
           <Layout>
@@ -187,7 +187,7 @@
         </Container>
         <Container class="javax.swing.JPanel" name="slot2">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new engine.ImagePanel()"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new engine.ImagePanel(true)"/>
           </AuxValues>
 
           <Layout>
