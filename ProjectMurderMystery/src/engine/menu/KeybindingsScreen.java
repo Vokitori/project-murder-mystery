@@ -39,7 +39,6 @@ public class KeybindingsScreen extends Screen {
         super(game);
         initComponents();
         readProperties();
-        writeProperties();
         back.addActionListener((ActionEvent e) -> {
             game.setScreen(game.optionsScreen);
         });
@@ -96,6 +95,7 @@ public class KeybindingsScreen extends Screen {
             for (int i = 0; i < KEYBINDINGS_KEY.length; i++) {
                 properties.setProperty(KEYBINDINGS_NAME[i], KEYBINDINGS_KEY[i]);
             }
+            writeProperties();
         }
     }
 
