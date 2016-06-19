@@ -1,6 +1,0 @@
-//alles zwischen zwei rauten := screenBlock 
-music = eatdatschwalb.mp3;
-event = shake;
-slot1 = dummy.png;
-#
-DU VERHUNGERST! GAME OVER.
