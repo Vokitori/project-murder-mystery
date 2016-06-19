@@ -9,7 +9,7 @@ background = Gang1_tag.png;
 N: ...
 ##
 slot1 = NelsonNormal.png;
-slot2 = ViktoriaHappy.png;
+slot4 = ViktoriaHappy.png;
 background = Gang1.png;
 #
 V: Hi, Nelson!
@@ -17,7 +17,7 @@ V: Hi, Nelson!
 #
 N: Waaah!
 ##
-slot2 = ViktoriaNormal.png;
+slot4 = ViktoriaNormal.png;
 #
 V: Sorry, wollte dich nicht erschrecken. -.-'
 ##
@@ -91,7 +91,7 @@ V: Tschüss.
 V: (*seufz* Wo hab ich mich da wieder reingeritten? -.-')
 ##
 slot1 = delete;
-slot2 = delete;
+slot4 = delete;
 #
 7 Stunden später...
 ##
@@ -106,7 +106,7 @@ V: (Sieht so aus, als ob die Luft nun rein wäre. Dann mach ich mich mal auf den
 #
 V: Aahh!
 ##
-slot2 = SchwalbNormal.png;
+slot4 = SchwalbNormal.png;
 #
 B: Hehe.
 ##
@@ -145,5 +145,5 @@ V: (Nelson wollte, dass ich allein komme. Aber vielleicht würde ich mich trotzd
 ##
 #
 Nimmst du Schwalbs Angebot, Viktoria zu begleiten, an?
-{ACTI_1F.txt|Ja}
+{ACTII_1F.txt|Ja}
 {ACTI_2F.txt|Nein}

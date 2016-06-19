@@ -51,7 +51,7 @@ V: (Ist das nicht...? Holy shit, es ist echt Nelson! Was geht mit dem ab? Sag mi
 #
 V: (Wahh, in was bin ich da grad gestiegen? Ist das...Wasser am Boden?)
 ##
-slot2 = NelsonPossessed.png;
+slot4 = NelsonPossessed.png;
 #
 N: ...
 ##
@@ -65,7 +65,7 @@ N: *dreht sich um* Vi..k..to..ri..a...
 V: Äh, ja...? (OK, irgendwas stimmt mit ihm nicht. Hat er sich verletzt oder so? Vielleicht sollte ich-) 
 ##
 slot1 = ArianaNormal.png;
-slot2 = ViktoriaNormal.png;
+slot4 = ViktoriaNormal.png;
 slot3 = NelsonPossessed.png;
 #
 A: *taucht hinter Viktoria auf* Lauf! *verschwindet wieder*
