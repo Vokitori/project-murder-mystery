@@ -69,7 +69,7 @@ public class MainMenuScreen extends Screen {
         credits = new ImageButton();
         newPath = new ImageButton();
         load = new ImageButton();
-        leaveGame = new javax.swing.JButton();
+        leaveGame = new ImageButton();
         options = new ImageButton();
 
         credits.setText("Credits");

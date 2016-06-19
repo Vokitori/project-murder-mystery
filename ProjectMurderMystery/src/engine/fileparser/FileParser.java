@@ -115,7 +115,12 @@ public class FileParser {
                     break;
                 case "background":
                     if (action == DataAction.LOAD) {
-                        img = ImageIO.read(new File(imagePath + part[1]));
+                        try {
+                            img = ImageIO.read(new File(imagePath + part[1]));
+                        } catch (IOException ex) {
+                            System.out.println(part[1]);
+                            throw ex;
+                        }
                     }
                     background.object = new DataPackage<>(img, action);
                     break;
