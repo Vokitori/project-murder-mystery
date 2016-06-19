@@ -1,0 +1,80 @@
+//ACTII_1
+slot1=ViktoriaNormal.png;
+background = WC_Waschbecken.png;
+#
+V: (Ok, Viktoria, reiß dich zusammen! Es war sicher nur Einbildung...oder vielleicht spielt mir hier echt jemand einen Streich. Na warte, du Pfosten, dir werd ich's zeigen!)
+##
+background = WC_Kabine.png;
+#
+*Geräusch von sich öffnender Kabinen-Tür*
+##
+#
+V: (Ha, niemand hier! Es war wohl echt nur in meinem Kopf. Mann, ich sollte mich wirklich mehr an solche Sachen gewöhnen, damit ich nicht mehr so leicht zu erschrecken bin. Vielleicht sollte ich doch Julias Angebot annehmen und mal ein Horror-Spiel mit ihr- huh? AAAAHHH!!)
+##
+#
+*Bild: In Blut an Innenseite der Kabinen-Tür steht geschrieben: "LASS DICH NICHT VON IHM EINHOLEN"*
+##
+#
+V: What the fuck?! *Viktoria rennt aus der Toilette raus*
+##
+background = Gang3.png;
+#
+V: (Was zur Hölle sollte das jetzt sein?! Oh mein Gott, sind die alle bescheuert? Das muss ja jetzt echt ein saudummer Streich gewesen sein, oder? Vermutlich stecken Nelson und Schwalb unter einer Decke, diese miesen Dreckskerle!! Mir reicht's jetzt echt, nix wie weg von hier!)
+##
+background = Eingangshalle.png;
+#
+V: (Das erste, was ich machen werde, wenn ich daheim bin, ist ein langes, heißes Schaumbad zu nehmen, um meine Nerven zu beruhigen. Dann werd ich mir einen urkitschigen Shoujo-Anime reinziehen, während ich meine Rache für morgen plane!)Hm? (Die Tür geht nicht auf. Aber ich dachte, dass von innen die Haupttür auch nachts nicht verschlossen wird. Mann, heute geht echt alles schief. -.-' Egal, muss ich halt meine Studentenkarte verwenden.)
+##
+#
+*Pips-Geräusch*
+##
+#
+V: (Es geht immer noch nicht auf!) VERDAMMTE SCHEISSE!
+##
+#
+B: Ach herrje, eine junge Dame sollte mehr Rücksicht auf ihre Wortwahl nehmen. (*Viktoria steht mit Rücken zu Schwalb, als er das sagt. Er verschwindet danach gleich wieder.)
+##
+#
+V: Huh? Hat wer was gesagt? (Super, jetzt hör ich auch noch Stimmen. Warum auch nicht? *seufz* Mann, jetzt muss ich den ganzen Weg rauf in den 3. Stock und von dort aus ins A-Gebäude, wo es einen Notausgang gibt. Heute bleibt mir auch echt nichts erspart.)
+##
+background = Gang1.png;
+#
+V: (Hm? Bilde ich mir das grade nur ein oder hab ich grad das Geräusch von Schritten gehört? Inzwischen weiß ich wirklich nicht mehr, wie viel ich meinen Sinnen noch trauen kann. -.-' Oh, es sind wirklich Schritte, sie kommen aus diesem Raum dort mit der angelehnten Tür. Ich schau mal von draußen rein, vermutlich ist es der Nachtwächter und von dem will ich mich jetzt echt nicht auch noch erwischen lassen.)
+##
+background = Raum3.png;
+#
+V: (Ist das nicht...? Holy shit, es ist echt Nelson! Was geht mit dem ab? Sag mir bloß nicht, er hat den ausgemachten Treffpunkt verwechselt oder so? Aber...irgendwie steht er komisch da. Ist er immer schon so gebeugt gegangen?)
+##
+#
+*Platsch-Geräusch*
+##
+#
+V: (Wahh, in was bin ich da grad gestiegen? Ist das...Wasser am Boden?)
+##
+slot2 = NelsonPossessed.png;
+#
+N: ...
+##
+#
+V: Nelson, alles ok? Warum bist du nicht gekommen? Wir hatten doch ausgemacht den Raum-
+##
+#
+N: *dreht sich um* Vi..k..to..ri..a...
+##
+#
+V: Äh, ja...? (OK, irgendwas stimmt mit ihm nicht. Hat er sich verletzt oder so? Vielleicht sollte ich-) 
+##
+slot1 = ArianaNormal.png;
+slot2 = ViktoriaNormal.png;
+slot3 = NelsonPossessed.png;
+#
+A: *taucht hinter Viktoria auf* Lauf! *verschwindet wieder*
+##
+slot1 = delete;
+#
+V: *dreht sich kurz um* Was?! (Oh mein Gott, was soll ich machen? Ich sollte schauen, wie es ihm geht, aber irgendwie will ich nur so schnell wie möglich weg von hier.)
+##
+#
+Was soll Viktoria tun?
+{ACTIII_1F.txt|Aus dem Raum rennen und die Tür hinter sich schließen}
+{ACTIII_2F.txt|Sich Nelson nähern und herausfinden, was mit ihm los ist}

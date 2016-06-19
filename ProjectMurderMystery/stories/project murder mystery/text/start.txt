@@ -145,3 +145,5 @@ V: (Nelson wollte, dass ich allein komme. Aber vielleicht würde ich mich trotzd
 ##
 #
 Nimmst du Schwalbs Angebot, Viktoria zu begleiten, an?
+{ACTI_1F.txt|Ja}
+{ACTI_2F.txt|Nein}
