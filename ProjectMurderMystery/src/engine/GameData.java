@@ -33,10 +33,10 @@ public class GameData {
     private LinkedList<Decision> decisionList;
     public final String folder;
 
-    public GameData() throws FileNotFoundException, IOException {
+    public GameData(String startFile) throws FileNotFoundException, IOException {
         Scanner scanner = new Scanner(new File("stories/storyselect"));
         folder = "stories/" + scanner.nextLine() + "/";
-        String path = getTextPath() + "start.txt";
+        String path = getTextPath() + startFile;
         nodes = FileParser.parseBigNode(new File(path), getImagePath(), getSoundPath(), getTextPath());
         slot1 = new Ref<>();
         slot2 = new Ref<>();

@@ -27,6 +27,7 @@ public class NewPathScreen extends Screen {
         });
         
         viktraButton.addActionListener((ActionEvent e) -> {
+            game.inGameScreen.load("start.txt");
             game.setScreen(game.inGameScreen);
         });
         try {

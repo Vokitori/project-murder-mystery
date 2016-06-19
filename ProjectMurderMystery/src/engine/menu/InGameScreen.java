@@ -24,14 +24,16 @@ public class InGameScreen extends Screen {
 
     public InGameScreen(Game game) {
         super(game);
+        initComponents();
+        pauseButton.addActionListener((ActionEvent e) -> new Thread(() -> pauseGame(pauseMenu)).start());
+    }
+    
+    public void load(String startFile){
         try {
-            gameData = new GameData();
+            gameData = new GameData(startFile);
         } catch (IOException ex) {
             Logger.getLogger(InGameScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        initComponents();
-        pauseButton.addActionListener((ActionEvent e) -> new Thread(() -> pauseGame(pauseMenu)).start());
         nextScreen();
         ((ImagePanel) slot1).setImage(gameData.getSlot1());
         ((ImagePanel) slot2).setImage(gameData.getSlot2());
