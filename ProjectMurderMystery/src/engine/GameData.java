@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,44 +21,37 @@ public class GameData {
 
     private LinkedList<SmallNode> nodes;
 
-    private final Ref<BufferedImage> slot1;
-    private final Ref<BufferedImage> slot2;
-    private final Ref<BufferedImage> slot3;
-    private final Ref<BufferedImage> slot4;
-    private final Ref<BufferedImage> background;
+    private final Ref<BufferedImage> slot1= new Ref<>();
+    private final Ref<BufferedImage> slot2= new Ref<>();
+    private final Ref<BufferedImage> slot3 = new Ref<>();
+    private final Ref<BufferedImage> slot4= new Ref<>();
+    private final Ref<BufferedImage> background= new Ref<>();
     private GameEvent gameEvent;
     private Music music;
     private String text;
     private LinkedList<Decision> decisionList;
-    public final String folder;
+
+    private String currentBigNode;
+    private int currentSmallNode= 0;
 
     public GameData(String startFile) throws FileNotFoundException, IOException {
-        Scanner scanner = new Scanner(new File("stories/storyselect"));
-        folder = "stories/" + scanner.nextLine() + "/";
-        String path = getTextPath() + startFile;
-        nodes = FileParser.parseBigNode(new File(path), getImagePath(), getSoundPath(), getTextPath());
-        slot1 = new Ref<>();
-        slot2 = new Ref<>();
-        slot3 = new Ref<>();
-        slot4 = new Ref<>();
-        background = new Ref<>();
+        currentBigNode = Game.getTextPath() + startFile;
+        nodes = FileParser.parseBigNode(new File(currentBigNode), Game.getImagePath(), Game.getSoundPath(), Game.getTextPath());
     }
 
-    public final String getSoundPath() {
-        return folder + "sound/";
+    public String getCurrentBigNode() {
+        return currentBigNode;
     }
 
-    public final String getTextPath() {
-        return folder + "text/";
-    }
-
-    public final String getImagePath() {
-        return folder + "image/";
+    public int getCurrentSmallNode() {
+        return currentSmallNode;
     }
 
     public void nextNode(int decision) {
         try {
-            nodes = FileParser.parseBigNode(decisionList.get(decision).file, getImagePath(), getSoundPath(), getTextPath());
+            currentBigNode = decisionList.get(decision).file.toString();
+            currentSmallNode = 0;
+            nodes = FileParser.parseBigNode(decisionList.get(decision).file, Game.getImagePath(), Game.getSoundPath(), Game.getTextPath());
             nextNode();
         } catch (IOException ex) {
             Logger.getLogger(GameData.class.getName()).log(Level.SEVERE, null, ex);
@@ -70,7 +62,15 @@ public class GameData {
         return !nodes.isEmpty();
     }
 
+    public void skipNodes(int count) {
+        for (int i = 0; i < count; i++) {
+            nextNode();
+        }
+    }
+
     public void nextNode() {
+        currentSmallNode++;
+
         SmallNode node = nodes.pop();
         slot1.object = getNext(slot1.object, node.slot1);
         slot2.object = getNext(slot2.object, node.slot2);

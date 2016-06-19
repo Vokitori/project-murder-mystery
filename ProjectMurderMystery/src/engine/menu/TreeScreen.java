@@ -17,7 +17,10 @@ public class TreeScreen extends Screen {
         back.addActionListener((ActionEvent e) -> {
             game.setScreen(game.mainScreen);
         });
-
+        load.addActionListener((ActionEvent e) -> {
+            game.inGameScreen.autoLoad();
+            game.setScreen(game.inGameScreen);
+        });
     }
 
     @SuppressWarnings("unchecked")

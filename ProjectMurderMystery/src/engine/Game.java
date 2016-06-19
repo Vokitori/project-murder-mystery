@@ -5,8 +5,10 @@ import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -21,6 +23,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Game {
 
     public final JFrame window = new JFrame("Titel");
+
     public final IntroScreen introScreen = new IntroScreen(this);
     public final CreditsScreen creditsScreen = new CreditsScreen(this);
     public final OptionsScreen optionsScreen = new OptionsScreen(this);
@@ -29,10 +32,22 @@ public class Game {
     public final NewPathScreen newPathScreen = new NewPathScreen(this);
     public final InGameScreen inGameScreen = new InGameScreen(this);
     public final MainMenuScreen mainScreen = new MainMenuScreen(this);
+
     public final Screen menuList[] = {introScreen, creditsScreen, optionsScreen,
         keybindingsScreen, treeScreen, newPathScreen, inGameScreen, mainScreen};
     public Screen activeScreen;
+
     private boolean ingame = false;
+
+    public static String FOLDER;
+
+    static {
+        try (Scanner scanner = new Scanner(new File("stories/storyselect"))) {
+            FOLDER = "stories/" + scanner.nextLine() + "/";
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public Game() {
         window.setMinimumSize(new Dimension(800, 600));
@@ -70,7 +85,6 @@ public class Game {
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public void load() {
@@ -97,6 +111,9 @@ public class Game {
         if (window.getContentPane() instanceof Screen) {
             ((Screen) window.getContentPane()).pause();
         }
+        if (ingame && activeScreen == treeScreen && screen == inGameScreen) {
+            inGameScreen.continueGame(inGameScreen.pauseMenu);
+        }
         activeScreen = screen;
         screen.resume();
         if (ingame && screen == mainScreen) {
@@ -104,8 +121,19 @@ public class Game {
                 ingame = false;
             } else {
                 window.setContentPane(inGameScreen);
+                inGameScreen.continueGame(inGameScreen.pauseMenu);
                 screen.repaint();
                 screen.revalidate();
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    inGameScreen.pauseGame(inGameScreen.pauseMenu);
+                    screen.repaint();
+                    screen.revalidate();
+                }).start();
                 return;
             }
         }
@@ -130,5 +158,21 @@ public class Game {
 
     public void keyPressedDown() {
         activeScreen.keyPressedDown();
+    }
+
+    public static final String getSoundPath() {
+        return FOLDER + "sound/";
+    }
+
+    public static final String getTextPath() {
+        return FOLDER + "text/";
+    }
+
+    public static final String getImagePath() {
+        return FOLDER + "image/";
+    }
+
+    public static final String getAutoSavePath() {
+        return FOLDER + "last";
     }
 }

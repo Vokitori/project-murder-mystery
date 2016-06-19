@@ -5,10 +5,15 @@ import engine.ImagePanel;
 import engine.Game;
 import engine.GameData;
 import engine.Screen;
+import engine.SlowTextWriter;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -27,24 +32,47 @@ public class InGameScreen extends Screen {
         initComponents();
         pauseButton.addActionListener((ActionEvent e) -> new Thread(() -> pauseGame(pauseMenu)).start());
     }
-    
-    public void load(String startFile){
+
+    public void load(String startFile) {
+        load(startFile, 0);
+    }
+
+    protected void load(String startFile, int skipSmallNodes) {
         try {
             gameData = new GameData(startFile);
+            gameData.skipNodes(skipSmallNodes);
+            nextScreen();
+            ((ImagePanel) slot1).setImage(gameData.getSlot1());
+            ((ImagePanel) slot2).setImage(gameData.getSlot2());
+            ((ImagePanel) slot3).setImage(gameData.getSlot3());
+            ((ImagePanel) slot4).setImage(gameData.getSlot4());
+
+            ((ImagePanel) slot1).setKeepRatio(true);
+            ((ImagePanel) slot2).setKeepRatio(true);
+            ((ImagePanel) slot3).setKeepRatio(true);
+            ((ImagePanel) slot4).setKeepRatio(true);
+            ((ImagePanel) gamePanel).setImage(gameData.getBackground());
         } catch (IOException ex) {
             Logger.getLogger(InGameScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-        nextScreen();
-        ((ImagePanel) slot1).setImage(gameData.getSlot1());
-        ((ImagePanel) slot2).setImage(gameData.getSlot2());
-        ((ImagePanel) slot3).setImage(gameData.getSlot3());
-        ((ImagePanel) slot4).setImage(gameData.getSlot4());
+    }
 
-        ((ImagePanel) slot1).setKeepRatio(true);
-        ((ImagePanel) slot2).setKeepRatio(true);
-        ((ImagePanel) slot3).setKeepRatio(true);
-        ((ImagePanel) slot4).setKeepRatio(true);
-        ((ImagePanel) gamePanel).setImage(gameData.getBackground());
+    public void autoLoad() {
+        try (Scanner scanner = new Scanner(new File(Game.getAutoSavePath()))) {
+            load(scanner.nextLine(), scanner.nextInt());
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(InGameScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void autoSave() {
+        try (PrintWriter writer = new PrintWriter(Game.getAutoSavePath())) {
+            writer.println(gameData.getCurrentBigNode().replace(Game.getTextPath(), ""));
+            writer.println(gameData.getCurrentSmallNode() - 1);
+            writer.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(InGameScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -57,11 +85,17 @@ public class InGameScreen extends Screen {
     }
 
     public final void nextScreen(int i) {
+        if (!SlowTextWriter.canContinue) {
+            return;
+        }
         gameData.nextNode(i);
         nextScreen(null);
     }
 
     public final void nextScreen() {
+        if (!SlowTextWriter.canContinue) {
+            return;
+        }
         gameData.nextNode();
         nextScreen(null);
     }
@@ -73,10 +107,13 @@ public class InGameScreen extends Screen {
             textDecisionPanel.remove(textBox);
             textDecisionPanel.add(choicePanel, BorderLayout.CENTER);
         } else {
-            textBox.setText(gameData.getText());
+            SlowTextWriter.fillSlowlyWith(textBox, gameData.getText());
             textDecisionPanel.remove(choicePanel);
             textDecisionPanel.add(textBox, BorderLayout.CENTER);
         }
+
+        autoSave();
+        SlowTextWriter.skip = false;
         validate();
         repaint();
     }
@@ -84,6 +121,7 @@ public class InGameScreen extends Screen {
     public void pauseGame(Pause pauseMenu) {
         overlay = pauseMenu.container;
         pauseGame((Screen) pauseMenu);
+        pauseMenu.resume();
     }
 
     private void pauseGame(Screen menu) {
@@ -99,6 +137,7 @@ public class InGameScreen extends Screen {
         pauseButton.setEnabled(true);
         overlay = null;
         remove(menu);
+        menu.pause();
         game.inGameScreen.repaint();
         game.inGameScreen.revalidate();
     }
@@ -112,6 +151,11 @@ public class InGameScreen extends Screen {
         if (gameData.getBackground() != null) {
             ((ImagePanel) gamePanel).setImage(gameData.getBackground());
         }
+    }
+
+    @Override
+    public void keyPressedCancel() {
+        SlowTextWriter.skip = true;
     }
 
     @SuppressWarnings("unchecked")
@@ -137,7 +181,10 @@ public class InGameScreen extends Screen {
 
         textBox.setEditable(false);
         textBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        textBox.setFocusable(false);
+        textBox.setRequestFocusEnabled(false);
         textPanel.add(textBox, java.awt.BorderLayout.CENTER);
+        textBox.setHighlighter(null);
 
         choicePanel.setBackground(new java.awt.Color(150, 150, 150));
         choicePanel.setLayout(new java.awt.BorderLayout());
