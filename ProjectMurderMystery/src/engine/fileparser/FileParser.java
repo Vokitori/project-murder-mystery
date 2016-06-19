@@ -133,7 +133,7 @@ public class FileParser {
                     music.object = new DataPackage<>(musicFile, action);
                     break;
                 default:
-                    throw new AssertionError();
+                    throw new AssertionError(part[0]);
             }
         }
     }
