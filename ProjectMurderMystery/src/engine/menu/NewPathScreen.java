@@ -53,13 +53,6 @@ public class NewPathScreen extends Screen {
         back.setText("back");
 
         viktraButton.setBackground(new java.awt.Color(0, 0, 0));
-        viktraButton.setText("jButton1");
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
