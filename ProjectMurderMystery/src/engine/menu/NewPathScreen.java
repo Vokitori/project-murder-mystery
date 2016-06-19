@@ -25,9 +25,13 @@ public class NewPathScreen extends Screen {
         back.addActionListener((ActionEvent e) -> {
             game.setScreen(game.mainScreen);
         });
+        
+        viktoriaButton.addActionListener((ActionEvent e) -> {
+            game.setScreen(game.inGameScreen);
+        });
         try {
             Ref<BufferedImage> img = new Ref<>(ImageIO.read(new File("data/NotFree.png")));
-            ((ImageButton) jButton1).setImage(new Ref<>(ImageIO.read(new File("data/choosePathVi.png"))));
+            ((ImageButton) viktoriaButton).setImage(new Ref<>(ImageIO.read(new File("data/choosePathVi.png"))));
             ((ImageButton) jButton2).setImage(img);
             ((ImageButton) jButton3).setImage(img);
             ((ImageButton) jButton4).setImage(img);
@@ -41,15 +45,15 @@ public class NewPathScreen extends Screen {
     private void initComponents() {
 
         back = new javax.swing.JButton();
-        jButton1 = new ImageButton();
+        viktoriaButton = new ImageButton();
         jButton2 = new ImageButton();
         jButton3 = new ImageButton();
         jButton4 = new ImageButton();
 
         back.setText("back");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("jButton1");
+        viktoriaButton.setBackground(new java.awt.Color(0, 0, 0));
+        viktoriaButton.setText("jButton1");
 
         jButton2.setText("jButton2");
 
@@ -65,7 +69,7 @@ public class NewPathScreen extends Screen {
                 .addContainerGap()
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(viktoriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
@@ -82,7 +86,7 @@ public class NewPathScreen extends Screen {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(viktoriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -96,9 +100,9 @@ public class NewPathScreen extends Screen {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton viktoriaButton;
     // End of variables declaration//GEN-END:variables
 }

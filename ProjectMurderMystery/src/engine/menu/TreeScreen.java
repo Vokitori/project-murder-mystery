@@ -18,9 +18,6 @@ public class TreeScreen extends Screen {
             game.setScreen(game.mainScreen);
         });
         
-        load.addActionListener((ActionEvent e) -> {
-            game.setScreen(game.inGameScreen);
-        });
     }
 
     /**
