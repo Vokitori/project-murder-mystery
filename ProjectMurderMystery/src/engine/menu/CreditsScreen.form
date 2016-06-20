@@ -60,7 +60,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="rows" type="int" value="5"/>
-        <Property name="text" type="java.lang.String" value="Spiel gemacht von:&#xa;Thomas&#xa;Viktoria&#xa;Julia&#xa;Maximilian&#xa;&#xa;Au&#xdf;erdem m&#xf6;chten wir Schwalb f&#xfc;r &#xa;seine wertvolle Unterst&#xfc;tzung&#xa;danken! &#xa;._.&#xa;"/>
+        <Property name="text" type="java.lang.String" value="Spiel gemacht von:&#xa;Thomas&#xa;Viktoria&#xa;Julia&#xa;Maximilian&#xa;&#xa;Au&#xdf;erdem m&#xf6;chten wir unserem &#xa;Betreuer Professor Mandl &#xa;und Schwalb f&#xfc;r ihre wertvolle &#xa;Unterst&#xfc;tzung danken! &#xa;"/>
         <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>

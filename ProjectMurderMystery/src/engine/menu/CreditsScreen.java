@@ -48,7 +48,7 @@ public class CreditsScreen extends Screen {
         creditsText.setFont(new java.awt.Font("Courier 10 Pitch", 0, 24)); // NOI18N
         creditsText.setForeground(new java.awt.Color(0, 0, 0));
         creditsText.setRows(5);
-        creditsText.setText("Spiel gemacht von:\nThomas\nViktoria\nJulia\nMaximilian\n\nAußerdem möchten wir Schwalb für \nseine wertvolle Unterstützung\ndanken! \n._.\n");
+        creditsText.setText("Spiel gemacht von:\nThomas\nViktoria\nJulia\nMaximilian\n\nAußerdem möchten wir unserem \nBetreuer Professor Mandl \nund Schwalb für ihre wertvolle \nUnterstützung danken! \n");
         creditsText.setCaretColor(new java.awt.Color(255, 255, 255));
         creditsText.setOpaque(false);
 
