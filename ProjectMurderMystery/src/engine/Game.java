@@ -22,7 +22,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class Game {
 
-    public final JFrame window = new JFrame("Titel");
+    public final JFrame window = new JFrame("Lange Schatten");
 
     public final IntroScreen introScreen = new IntroScreen(this);
     public final CreditsScreen creditsScreen = new CreditsScreen(this);

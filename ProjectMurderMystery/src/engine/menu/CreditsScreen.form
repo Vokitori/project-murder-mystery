@@ -18,16 +18,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
                       <Component id="back" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
-                      <Component id="creditsText" min="-2" pref="249" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="creditsText" min="-2" pref="593" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="309" max="32767" attributes="0"/>
+              <EmptySpace pref="126" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,7 +36,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
               <Component id="creditsText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="308" max="32767" attributes="0"/>
+              <EmptySpace pref="158" max="32767" attributes="0"/>
               <Component id="back" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -60,7 +60,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="rows" type="int" value="5"/>
-        <Property name="text" type="java.lang.String" value="Spiel gemacht von:&#xa;Thomas,&#xa;Viktoria,&#xa;Julia,&#xa;Maximilian"/>
+        <Property name="text" type="java.lang.String" value="Spiel gemacht von:&#xa;Thomas&#xa;Viktoria&#xa;Julia&#xa;Maximilian&#xa;&#xa;Au&#xdf;erdem m&#xf6;chten wir Schwalb f&#xfc;r &#xa;seine wertvolle Unterst&#xfc;tzung&#xa;danken! &#xa;._.&#xa;"/>
         <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>

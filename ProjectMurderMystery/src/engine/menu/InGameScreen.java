@@ -177,9 +177,12 @@ public class InGameScreen extends Screen {
         slot4 = new engine.ImagePanel();
 
         textPanel.setBackground(new java.awt.Color(244, 63, 220));
+        textPanel.setOpaque(false);
         textPanel.setLayout(new java.awt.BorderLayout());
 
         textBox.setEditable(false);
+        textBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        textBox.setFont(new java.awt.Font("Amiri", 0, 16)); // NOI18N
         textBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         textBox.setFocusable(false);
         textBox.setRequestFocusEnabled(false);

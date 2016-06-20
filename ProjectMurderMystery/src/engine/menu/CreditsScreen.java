@@ -48,7 +48,7 @@ public class CreditsScreen extends Screen {
         creditsText.setFont(new java.awt.Font("Courier 10 Pitch", 0, 24)); // NOI18N
         creditsText.setForeground(new java.awt.Color(0, 0, 0));
         creditsText.setRows(5);
-        creditsText.setText("Spiel gemacht von:\nThomas,\nViktoria,\nJulia,\nMaximilian");
+        creditsText.setText("Spiel gemacht von:\nThomas\nViktoria\nJulia\nMaximilian\n\nAußerdem möchten wir Schwalb für \nseine wertvolle Unterstützung\ndanken! \n._.\n");
         creditsText.setCaretColor(new java.awt.Color(255, 255, 255));
         creditsText.setOpaque(false);
 
@@ -62,16 +62,16 @@ public class CreditsScreen extends Screen {
                         .addGap(376, 376, 376)
                         .addComponent(back))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(242, 242, 242)
-                        .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(309, Short.MAX_VALUE))
+                        .addGap(81, 81, 81)
+                        .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(creditsText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(back)
                 .addContainerGap())
         );

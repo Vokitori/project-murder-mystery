@@ -1,93 +1,93 @@
 slot1 = ViktoriaNormal.png;
 background = Raum1_tag.png;
 #
-V: Hm, anscheinend hat Simon's Klasse gerade Mathematik in Raum A3.06. Ich werde draußen am Gang warten, bis die Stunde vorbei ist.
+Viktoria: Hm, anscheinend hat Simon's Klasse gerade Mathematik in Raum A3.06. Ich werde draußen am Gang warten, bis die Stunde vorbei ist.
 ##
 slot1 = NelsonNormal.png;
 background = Gang1_tag.png;
 #
-N: ...
+Nelson: ...
 ##
 slot1 = NelsonNormal.png;
 slot4 = ViktoriaHappy.png;
 #
-V: Hi, Nelson!
+Viktoria: Hi, Nelson!
 ##
 #
-N: Waaah!
+Nelson: Waaah!
 ##
 slot4 = ViktoriaNormal.png;
 #
-V: Sorry, wollte dich nicht erschrecken. -.-'
+Viktoria: Sorry, wollte dich nicht erschrecken. -.-'
 ##
 #
-N: Oh, hallo, Viktoria...
+Nelson: Oh, hallo, Viktoria...
 ##
 #
-V: Sooo, wie geht's dir so? Ähm, ich mein, wegen Simon und so. Tut mir wirklich leid. Echt schlimm, was passiert ist.
+Viktoria: Sooo, wie geht's dir so? Ähm, ich mein, wegen Simon und so. Tut mir wirklich leid. Echt schlimm, was passiert ist.
 ##
 #
-N: Ja, furchtbar...
+Nelson: Ja, furchtbar...
 ##
 #
-V: Hast du eine Idee, warum er es getan haben könnte? Die paar Mal, wenn ich ihn gesehen habe, wirkte er eigentlich immer ganz fröhlich.
+Viktoria: Hast du eine Idee, warum er es getan haben könnte? Die paar Mal, wenn ich ihn gesehen habe, wirkte er eigentlich immer ganz fröhlich.
 ##
 #
-N: Ähm, naja. Er schien keine Probleme zu haben im Moment. Aber für lange Zeit war er...
+Nelson: Ähm, naja. Er schien keine Probleme zu haben im Moment. Aber für lange Zeit war er...
 ##
 #
-V: Ja? Sorry, was hast du gesagt? Ich konnte dich nicht hören.
+Viktoria: Ja? Sorry, was hast du gesagt? Ich konnte dich nicht hören.
 ##
 #
-N: Nichts, nichts. Vergiss es einfach!
+Nelson: Nichts, nichts. Vergiss es einfach!
 ##
 #
-V: (Hm, er ist eindeutig nervös wegen irgendwas...)
+Viktoria: (Hm, er ist eindeutig nervös wegen irgendwas...)
 ##
 #
-N: Tut mir leid, Viktoria, aber ich muss zu meiner nächsten Stunde.
+Nelson: Tut mir leid, Viktoria, aber ich muss zu meiner nächsten Stunde.
 ##
 #
-V: Warte! Nelson, ich glaube nicht, dass Simon sich selbst das Leben genommen hat.
+Viktoria: Warte! Nelson, ich glaube nicht, dass Simon sich selbst das Leben genommen hat.
 ##
 #
-N: Was, warum?
+Nelson: Was, warum?
 ##
 #
-V: Na ja, er hat etwas zu mir und meinen Freunden gesagt, bevor er gestorben ist.
+Viktoria: Na ja, er hat etwas zu mir und meinen Freunden gesagt, bevor er gestorben ist.
 ##
 #
-N: Wirklich, was?
+Nelson: Wirklich, was?
 ##
 #
-V: Ich verrate es dir, wenn du mir alles erzählst, was einen möglichen Zusammenhang zu seinem Tod haben könnte.
+Viktoria: Ich verrate es dir, wenn du mir alles erzählst, was einen möglichen Zusammenhang zu seinem Tod haben könnte.
 ##
 #
-N: ...
+Nelson: ...
 ##
 #
-V: Also?
+Viktoria: Also?
 ##
 #
-N: Nicht hier. Treffen wir uns heute Abend in Raum C4.05, nachdem alle nach Hause gegangen sind. Du musst mir versprechen, dass du allein kommst.
+Nelson: Nicht hier. Treffen wir uns heute Abend in Raum C4.05, nachdem alle nach Hause gegangen sind. Du musst mir versprechen, dass du allein kommst.
 ##
 #
-V: Hier? Wenn es schon dunkel ist draußen?
+Viktoria: Hier? Wenn es schon dunkel ist draußen?
 ##
 #
-N: Ist das ein Problem?
+Nelson: Ist das ein Problem?
 ##
 #
-V: Äh, nein, natürlich nicht. (Ich hasse es, noch im Dunkeln unterwegs zu sein. Aber Nelson könnte echt wertvolle Informationen haben.)
+Viktoria: Äh, nein, natürlich nicht. (Ich hasse es, noch im Dunkeln unterwegs zu sein. Aber Nelson könnte echt wertvolle Informationen haben.)
 ##
 #
-N: Bis später, Viktoria.
+Nelson: Bis später, Viktoria.
 ##
 #
-V: Tschüss.
+Viktoria: Tschüss.
 ##
 #
-V: (*seufz* Wo hab ich mich da wieder reingeritten? -.-')
+Viktoria: (*seufz* Wo hab ich mich da wieder reingeritten? -.-')
 ##
 slot1 = delete;
 slot4 = delete;
@@ -97,52 +97,54 @@ slot4 = delete;
 slot1 = ViktoriaNormal.png;
 background = Gang2.png;
 #
-V: (Sieht so aus, als ob die Luft nun rein wäre. Dann mach ich mich mal auf den Weg zum C-Gebäude.)
+Viktoria: (Sieht so aus, als ob die Luft nun rein wäre. Dann mach ich mich mal auf den Weg zum C-Gebäude.)
 ##
 #
 *Geräusch*
 ##
 #
-V: Aahh!
+Viktoria: Aahh!
 ##
 slot4 = SchwalbNormal.png;
 #
-B: Hehe.
+Benjamin: Hehe.
 ##
 #
-V: Schwalb! Was geht mit dir ab, Mann?! Ich wär fast gestorben!
+Viktoria: Schwalb! Was geht mit dir ab, Mann?! Ich wär fast gestorben!
 ##
 #
-B: Entschuldige, Viktoria. Ich hab für einen Moment vergessen, wie leicht du doch zu erschrecken bist.
+Benjamin: Entschuldige, Viktoria. Ich hab für einen Moment vergessen, wie leicht du doch zu erschrecken bist.
 ##
 #
-V: Grrrhh.
+Viktoria: Grrrhh.
 ##
 #
-B: Diese Tatsache macht es jedoch umso verwunderlicher, dass du nachts hier in der leeren Schule herumschleichst. Darf man sich nach dem Grund erkundigen?
+Benjamin: Diese Tatsache macht es jedoch umso verwunderlicher, dass du nachts hier in der leeren Schule herumschleichst. Darf man sich nach dem Grund erkundigen?
 ##
 #
-V: Also, erstens bin nicht ich diejenige, die "schleicht". Zweitens habe ich noch was zu erledigen und drittens könnte ich dir dieselbe Fragen stellen, Schwalb.
+Viktoria: Also, erstens bin nicht ich diejenige, die "schleicht". Zweitens habe ich noch was zu erledigen und drittens könnte ich dir dieselbe Fragen stellen, Schwalb.
 ##
 #
-B: Und ich würde dir wohl sogar eine Antwort geben, wenn du endlich aufhören würdest, mich ständig bei meinem Nachnamen zu nennen.
+Benjamin: Und ich würde dir wohl sogar eine Antwort geben, wenn du endlich aufhören würdest, mich ständig bei meinem Nachnamen zu nennen.
 ##
 #
-V: Tja, ich denke, wir wissen beide, dass das nicht möglich ist.
+Viktoria: Tja, ich denke, wir wissen beide, dass das nicht möglich ist.
 ##
 #
-B: Dann sieht es so aus, als wären wir informationstechnisch in einer Sackgasse angelangt.
+Benjamin: Dann sieht es so aus, als wären wir informationstechnisch in einer Sackgasse angelangt.
 ##
 #
-V: Sieht so aus. Ich muss dann mal weiter, Schwaaalb.
+Viktoria: Sieht so aus. Ich muss dann mal weiter, Schwaaalb.
 ##
 #
-B: Bist du sicher, dass du deine mysteriöse Mission wirklich ganz alleine bewältigen willst? Trotz deines charmaten Sturschädels würde ich mich als Wegbegleiter anbieten.
+Benjamin: Bist du sicher, dass du deine mysteriöse Mission wirklich ganz alleine bewältigen willst? Trotz deines charmaten Sturschädels würde ich mich als Wegbegleiter anbieten.
 ##
 #
-V: (Nelson wollte, dass ich allein komme. Aber vielleicht würde ich mich trotzdem sicherer fühlen, wenn Schwalb vor dem Raum auf mich wartet...)
+Viktoria: (Nelson wollte, dass ich allein komme. Aber vielleicht würde ich mich trotzdem sicherer fühlen, wenn Schwalb vor dem Raum auf mich wartet...)
 ##
 #
 Nimmst du Schwalbs Angebot, Viktoria zu begleiten, an?
+##
+#
 {ACTI_1F.txt|Ja}
 {ACTI_2F.txt|Nein}
